@@ -5,7 +5,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="语言进阶与依赖管理, 孟秋十三">
-    <meta name="description" content="">
+    <meta name="description" content="并发编程
+线程与协程
+Go语言中可以通过go 开启一个协程，下述代码中的协程开启的写作方式通过C++中的Lambda表达式很像
+package main
+
+import (
+    &#34;fmt&#34;
+    &#34;time&#34;
+)
+
+func main">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,12 +374,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Go/">
+                                <span class="chip bg-color">Go</span>
+                            </a>
+                        
+                            <a href="/tags/thread/">
+                                <span class="chip bg-color">thread</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Go/" class="post-category">
+                                Go
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -399,7 +426,348 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h2><p><img src="/2023/080736829/4f01606b98ffef9af3c5b7ac1e9543d8.png" alt="4f01606b98ffef9af3c5b7ac1e9543d8"></p>
+<h2 id="线程与协程"><a href="#线程与协程" class="headerlink" title="线程与协程"></a>线程与协程</h2><p><img src="/2023/080736829/d88e1d1d11a3bfb68609b839357f9209.png" alt="d88e1d1d11a3bfb68609b839357f9209"></p>
+<p>Go语言中可以通过go 开启一个协程，下述代码中的协程开启的写作方式通过C++中的Lambda表达式很像</p>
+<pre class=" language-golang"><code class="language-golang">package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() &#123;
+    HelloGoRoutine()
+&#125;
+
+func hello(i int) &#123;
+    fmt.Println("hello goroutine:" + fmt.Sprint(i))
+&#125;
+
+func HelloGoRoutine() &#123;
+    for i := 0; i < 5; i++ &#123;
+        go func(j int) &#123;
+            hello(j)
+        &#125;(i)
+    &#125;
+    time.Sleep(time.Second)
+&#125;
+</code></pre>
+<p><img src="/2023/080736829/ab1dd80b7dc19188488668eebd0a09ed.png" alt="ab1dd80b7dc19188488668eebd0a09ed"></p>
+<h2 id="消息通信"><a href="#消息通信" class="headerlink" title="消息通信"></a>消息通信</h2><p><img src="/2023/080736829/e329c79dc6a028a939a9b5564f2acc3c.png" alt="e329c79dc6a028a939a9b5564f2acc3c"></p>
+<p><strong>channel 通过make来进行创建</strong></p>
+<p><img src="/2023/080736829/6faefb0b1146b43fcfb8c3c5ace32eca.png" alt="6faefb0b1146b43fcfb8c3c5ace32eca"></p>
+<h3 id="消息队列通信"><a href="#消息队列通信" class="headerlink" title="消息队列通信"></a>消息队列通信</h3><pre class=" language-golang"><code class="language-golang">package main
+
+import (
+    "fmt"
+)
+
+func main() &#123;
+    CalSquare()
+&#125;
+func CalSquare() &#123;
+    src := make(chan int)
+    dest := make(chan int, 3)
+    go func() &#123;
+        defer close(src)
+        for i := 0; i < 10; i++ &#123;
+            src <- i
+        &#125;
+    &#125;()
+    go func() &#123;
+        defer close(dest)
+        for i := range src &#123;
+            dest <- i * i
+        &#125;
+    &#125;()
+    for i := range dest &#123;
+        fmt.Println(i)
+    &#125;
+&#125;
+</code></pre>
+<p><img src="/2023/080736829/6a364801d2be7363b5d902f0115387b8.png" alt="6a364801d2be7363b5d902f0115387b8"></p>
+<h3 id="共享内存通信"><a href="#共享内存通信" class="headerlink" title="共享内存通信"></a>共享内存通信</h3><pre class=" language-golang"><code class="language-golang">package main
+
+import (
+    "fmt"
+    "sync"
+    //"time"
+)
+
+var (
+    x    int64
+    lock sync.Mutex
+)
+
+func main() &#123;
+    add()
+&#125;
+func addWithLock() &#123;
+    for i := 0; i < 2000; i++ &#123;
+        lock.Lock()
+        x += 1
+        lock.Unlock()
+    &#125;
+&#125;
+func addWithoutLock() &#123;
+    for i := 0; i < 2000; i++ &#123;
+        x += 1
+    &#125;
+&#125;
+func add() &#123;
+    x = 0
+    var wg sync.WaitGroup
+    wg.Add(5)
+    for i := 0; i < 5; i++ &#123;
+        go func() &#123;
+            defer wg.Done()
+            addWithoutLock()
+        &#125;()
+    &#125;
+    wg.Wait()
+    //time.Sleep(time.Second)
+    fmt.Println("WithoutLock:", x)
+    var wg1 sync.WaitGroup
+    wg1.Add(5)
+    x = 0
+    for i := 0; i < 5; i++ &#123;
+        go func() &#123;
+            defer wg1.Done()
+            addWithLock()
+        &#125;()
+    &#125;
+    wg1.Wait()
+    //time.Sleep(time.Second)
+    fmt.Println("WithLock:", x)
+&#125;
+</code></pre>
+<p><img src="/2023/080736829/e724de2e5e780233acd807118a4044a3.png" alt="e724de2e5e780233acd807118a4044a3"></p>
+<h2 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h2><h3 id="GOPATH"><a href="#GOPATH" class="headerlink" title="GOPATH"></a>GOPATH</h3><p>bin 项目编译的二进制文件</p>
+<p>pkg 项目编译的中间产物，加速编译</p>
+<p>src 项目源码 项目代码直接依赖src下的代码</p>
+<p>GOPATH 弊端：无法实现package的多版本控制</p>
+<h3 id="GoVendor"><a href="#GoVendor" class="headerlink" title="GoVendor"></a>GoVendor</h3><p>项目目录下增加govender文件，所有依赖包副本形式放在$ProjectRoot&#x2F;vendor</p>
+<p>依赖寻址方式：vendor&#x3D;&gt;GOPATH</p>
+<p>通过每个项目引入一份依赖的副本，解决了多个项目需要同一个package依赖的冲突问题</p>
+<h3 id="GoModule"><a href="#GoModule" class="headerlink" title="GoModule"></a>GoModule</h3><p>通过go.mod文件管理依赖包版本</p>
+<p>通过go get&#x2F;go mod 指令工具管理依赖包</p>
+<p><img src="/2023/080736829/db4029b4a0a32210de4e185841060d65.png" alt="db4029b4a0a32210de4e185841060d65"></p>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p><img src="/2023/080736829/31f408ceb006fe08a34af10389d656ad.png" alt="31f408ceb006fe08a34af10389d656ad"></p>
+<p><img src="/2023/080736829/681331c451405ed9e23d669a1e5a0dbb.png" alt="681331c451405ed9e23d669a1e5a0dbb"></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>回归测试</p>
+<p>集成测试</p>
+<h3 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h3><p><img src="/2023/080736829/7547969fb8089dec9c71f3e56c177d13.png" alt="7547969fb8089dec9c71f3e56c177d13"></p>
+<p>&#x3D;&#x3D;<strong>单元测试规则：</strong>&#x3D;&#x3D;</p>
+<ul>
+<li>所有测试文件以_test.go结尾</li>
+<li>func TestXxx(*Testing.T)</li>
+<li>初始化逻辑放到TestMain中</li>
+</ul>
+<h2 id="项目实战"><a href="#项目实战" class="headerlink" title="项目实战"></a>项目实战</h2><h3 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h3><p><img src="/2023/080736829/739cae0a1a4d2ffb8230fd71bfda9e68-1691420473372-13.png" alt="739cae0a1a4d2ffb8230fd71bfda9e68"></p>
+<h3 id="ER图"><a href="#ER图" class="headerlink" title="ER图"></a>ER图</h3><p><img src="/2023/080736829/a150a547309a73572b3fa05e709b3f75.png" alt="a150a547309a73572b3fa05e709b3f75"></p>
+<h3 id="分层结构"><a href="#分层结构" class="headerlink" title="分层结构"></a>分层结构</h3><p><img src="/2023/080736829/48abbddc66ed2c4881a0480175904511.png" alt="48abbddc66ed2c4881a0480175904511"></p>
+<p>数据层：数据model，外部数据的增删改查</p>
+<p>逻辑层：业务entity，处理核心业务逻辑输出</p>
+<p>视图层：视图view,处理何外部的交互逻辑</p>
+<h3 id="组件工具"><a href="#组件工具" class="headerlink" title="组件工具"></a>组件工具</h3><p><img src="/2023/080736829/137351b8e6524a74075974b75ec14e56.png" alt="137351b8e6524a74075974b75ec14e56"></p>
+<h2 id="需求描述-1"><a href="#需求描述-1" class="headerlink" title="需求描述"></a>需求描述</h2><ul>
+<li><p>展示话题和回帖列表</p>
+</li>
+<li><p>暂不考虑前端页面实现，仅仅实现一个本地web服务</p>
+</li>
+<li><p>话题和回帖数据用文件存储</p>
+<p>课后需要实现的内容为 支持发布帖子，本地id生成需要保证不重复，唯一性 append文件，更新索引</p>
+</li>
+</ul>
+<h2 id="组件工具-1"><a href="#组件工具-1" class="headerlink" title="组件工具"></a>组件工具</h2><p>针对web服务，采用Go中已有的Gin框架实现，Gin 是一个用于构建 Web 应用程序和 API 的 Go 语言框架。它提供了高性能、易用的路由、中间件和其他功能，使得开发 Web 服务变得更加简单和高效。 Gin 是一个轻量级的框架，旨在快速地处理 HTTP 请求和响应。它的设计目标是提供最小的内存占用和高度优化的性能，因此在处理高并发的情况下表现出色。如果要使用的话需要import “github.com&#x2F;gin-gonic&#x2F;gin”</p>
+<h2 id="GitHub知识"><a href="#GitHub知识" class="headerlink" title="GitHub知识"></a>GitHub知识</h2><p>针对课程源码中的GitHub库的使用上，有一些小的知识点，需要花时间去了解，对于源码中，为什么如何使用自己的GitHub包呢，首先，我们需要对go.mod中的module进行重新设置，需要更改成自己的GitHub的库地址例如下面这样： <code>module github.com/Mrmengqiushisan/go_test</code>，下一步需要通过将远端GitHub上的库进行发布并附带标签，这样我们在本地就可以随意访问我们自己的GitHub包了，例如这样<code>import &quot;github.com/Mrmengqiushisan/go_test/repository&quot;</code></p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>想要实现整个功能，我们需要对该项目的结构进行分层，抽象模型的考虑上，可以分为两个：post,topic,通过两个结构体可以很好的实现，对于这两个类的如何想要实现单例模式的话，C++角度需要利用语法的机制做很多调整，但对于Go语言来说通过<code>postOnce sync.Once</code>即可实现，<code>sync.Once</code> 是 Go 语言标准库 <code>sync</code> 包中的一个结构体类型，用于实现只执行一次的操作。它通常用于确保在并发环境下某个函数只被执行一次，无论有多少个 goroutine 在同时调用该函数。 <code>sync.Once</code> 提供了一个 <code>Do</code> 方法，用于指定只执行一次的操作。该方法接收一个函数作为参数，当多个 goroutine 同时调用 <code>Do</code> 方法时，只有一个 goroutine 会执行传入的函数，其他 goroutine 将会等待执行结束。当第一个 goroutine 执行结束后，<code>done</code> 字段会被标记为已完成，后续的调用将不再执行传入的函数。所以是线程安全的，实现方式可以参考如下代码：</p>
+<pre class=" language-golang"><code class="language-golang">package repository
+import "sync"
+type Post struct &#123;
+    Id         int64  `json:"id"`
+    ParentId   int64  `json:"parent_id"`
+    Content    string `json:"content"`
+    CreateTime int64  `json:"create_time"`
+&#125;
+type PostDao struct &#123;&#125;
+var (
+    postDao  *PostDao
+    postOnce sync.Once
+)
+func NewPostDaoInstance() *PostDao &#123;
+    postOnce.Do(
+        func() &#123;
+            postDao = &PostDao&#123;&#125;
+        &#125;)
+    return postDao
+&#125;
+func (*PostDao) QueryPostsByParentId(parentid int64) []*Post &#123;
+    return postIndexMap[parentid]
+&#125;
+
+type Topic struct &#123;
+    Id         int64  `json:"id"`
+    Title      string `json:"title"`
+    Content    string `json:"content"`
+    CreateTime int64  `json:"create_time"`
+&#125;
+type TopicDao struct&#123;&#125;
+var (
+    topicDao  *TopicDao
+    topicOnce sync.Once
+)
+func NewTopicDaoInstance() *TopicDao &#123;
+    topicOnce.Do(
+        func() &#123;
+            topicDao = &TopicDao&#123;&#125;
+        &#125;)
+    return topicDao
+&#125;
+func (*TopicDao) QueryTopicById(id int64) *Topic &#123;
+    return topicIndexMap[id]
+&#125;
+</code></pre>
+<h2 id="Map表的初始化创建"><a href="#Map表的初始化创建" class="headerlink" title="Map表的初始化创建"></a>Map表的初始化创建</h2><p>考虑到对帖子的更新修正以及及时访问，我们需要维护两个变量用来记录文件中已有的帖子数量，针对<code>InitTopicIndexMap InitPostIndexMap</code>这两个函数执行之前需要对该Map进行清除，以便于重新读写数据，同样也需要对文件数id进行置空，针对与这部分的实现主要有以下几个关键点：</p>
+<ul>
+<li>文件访问的函数使用 <code>os.open </code></li>
+<li>拿到文件handle后如何通过<code>bufio.newScanner</code>实现文件的行遍历</li>
+<li>map的处理行post和topic有所区别，因为post的map索引也是通过话题id来实现的，所以对于帖子的存储上我们需要通过切片方式进行存储，这样可以使用<code>append</code>方式进行追加</li>
+</ul>
+<pre class=" language-golang"><code class="language-golang">if len(postIndexMap) > 0 &#123;
+    postIndexMap = make(map[int64][]*Post)
+    postId = 0
+&#125;
+if len(topicIndexMap) > 0 &#123;
+    topicIndexMap = make(map[int64]*Topic)
+    topicId = 0
+&#125;
+</code></pre>
+<h2 id="serivce设计"><a href="#serivce设计" class="headerlink" title="serivce设计"></a>serivce设计</h2><p>页面的设计上我们一般是一个话题以及追加一系列的帖子，这样需要设计的结构体上就可以设计成这样：</p>
+<pre class=" language-golang"><code class="language-golang">type PageInfo struct &#123;
+    Topic    *repository.Topic
+    PostList []*repository.Post
+&#125;
+</code></pre>
+<p>这个结构体的设计已经可以满足界面设计需求了，那为什么还需要设计一个更加复杂的呢，首先考虑到界面索引的问题我们需要确定话题ID，根据话题ID需要确定帖子的Map索引数据，索引查找过程为两个没有关联的过程可以开启协程处理，这样的这个结构体的设计是很有必要的</p>
+<pre class=" language-golang"><code class="language-golang">type QueryPageInfoFlow struct &#123;
+    topicId  int64
+    pageInfo *PageInfo
+    topic    *repository.Topic
+    posts    []*repository.Post
+&#125;
+</code></pre>
+<p>其他的设计同源码，相对而言是较简单的</p>
+<h2 id="Controller设计"><a href="#Controller设计" class="headerlink" title="Controller设计"></a>Controller设计</h2><p>通过封装好的<code>service.QueryPageInfo(topicId)</code>实现页面数据的获取，结构体的设计如下：</p>
+<pre class=" language-golang"><code class="language-golang">type PageData struct &#123;
+    Code int64       `json:"code"`
+    Msg  string      `json:"msg"`
+    Data interface&#123;&#125; `json:"data"`
+&#125;
+</code></pre>
+<p>在 Go 语言中，<code>interface&#123;&#125;</code> 是一种特殊的数据类型，被称为空接口（Empty Interface）。空接口可以表示任意类型的值，因为它不包含任何方法，所以它对所有类型都是兼容的。</p>
+<p>在 Go 中，每个类型都实现了空接口，因为它不要求任何方法。因此，你可以将任意值赋给空接口变量，也可以从空接口中获取任意值。</p>
+<h2 id="server-go设计"><a href="#server-go设计" class="headerlink" title="server.go设计"></a>server.go设计</h2><p>此部分需要开启gin框架，在此之前需要进行Init两个map表，为了实现发布帖子的功能，我们需要设计一个新的函数 <code>InputPost()</code>这个函数可以在文件中添加新的帖子，设计如下：</p>
+<pre class=" language-golang"><code class="language-golang">func InputPost() error &#123;
+    for &#123;
+        fmt.Println("结束请输入E")
+        fmt.Println("我需要以下信息：")
+        fmt.Println("请输入发布帖子的内容：")
+        reader := bufio.NewReader(os.Stdin)
+        input, err := reader.ReadString('\n')
+        if err != nil &#123;
+            fmt.Println("An error occured while reading input Please try again", err)
+            continue
+        &#125;
+        topicContext := strings.Trim(input, "\r\n")
+        if strings.ToUpper(topicContext) == "E" &#123;
+            break
+        &#125;
+        fmt.Println("请输入您选择的话题：")
+        reader = bufio.NewReader(os.Stdin)
+        input, err = reader.ReadString('\n')
+        if err != nil &#123;
+            fmt.Println("An error occured while reading input Please try again", err)
+            continue
+        &#125;
+        parentIdStr := strings.Trim(input, "\r\n")
+        parent, err := strconv.ParseInt(parentIdStr, 10, 64)
+        if err != nil &#123;
+            fmt.Println("Invalid input,Please enter an integer value")
+            continue
+        &#125; //构建帖子结构
+        now := time.Now()
+        id := repository.GetPostCount()
+        (*id)++
+        fmt.Println("当前id值为")
+        posTmp := repository.Post&#123;
+            Id:         *id,
+            ParentId:   parent,
+            Content:    topicContext,
+            CreateTime: now.Unix(),
+        &#125;
+        open, err := os.OpenFile("./data/post", os.O_WRONLY|os.O_APPEND, 0666)
+        if err != nil &#123;
+            fmt.Println("file can not open ")
+            return errors.New("file can not open")
+        &#125;
+        buf, err := json.Marshal(posTmp)
+        if err != nil &#123;
+            fmt.Println("序列化失败")
+            return err
+        &#125;
+        _, err = open.Write([]byte&#123;'\n'&#125;)
+        _, err = open.Write(buf)
+        if err != nil &#123;
+            fmt.Println("写入失败", err)
+            return err
+        &#125;
+        fmt.Println("数据写入成功")
+    &#125;
+    return nil
+&#125;
+</code></pre>
+<p>对于main函数的修改，主要是GET的调用过程中，我们需要确认用户是否需要发布新的帖子到哪一个话题中，所以需要做一些小的修改</p>
+<pre class=" language-golang"><code class="language-golang">func main() &#123;
+    if err := Init("./data/"); err != nil &#123;
+        os.Exit(-1)
+    &#125;
+    r := gin.Default()
+    r.GET("/community/page/get/:id", func(ctx *gin.Context) &#123;
+        topicId := ctx.Param("id")
+        for &#123;
+            fmt.Println("请问是否有帖子需要输入呢")
+            reader := bufio.NewReader(os.Stdin)
+            put, err := reader.ReadString('\n')
+            if err != nil &#123;
+                fmt.Println("input error", err)
+                break
+            &#125;
+            putstr := strings.Trim(put, "\r\n")
+            if strings.ToUpper(putstr) == "Y" &#123;
+                if err := InputPost(); err != nil &#123;
+                    break
+                &#125;
+            &#125; else &#123;
+                break
+            &#125;
+        &#125;
+        if err := Init("./data/"); err != nil &#123;
+            fmt.Println("再次初始化失败", err)
+        &#125;
+        data := cotroller.QueryPageInfo(topicId)
+        ctx.JSON(200, data)
+    &#125;)
+    err := r.Run()
+    if err != nil &#123;
+        return
+    &#125;
+&#125;
+</code></pre>
+<p>展示结果如下：</p>
+<p><img src="/2023/080736829/32a4e7fe523b558b8b3a8dde1ec52c3e.png" alt="32a4e7fe523b558b8b3a8dde1ec52c3e"></p>
+
                 
             </div>
             <hr/>
@@ -462,7 +830,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Go/">
+                                    <span class="chip bg-color">Go</span>
+                                </a>
+                            
+                                <a href="/tags/thread/">
+                                    <span class="chip bg-color">thread</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
