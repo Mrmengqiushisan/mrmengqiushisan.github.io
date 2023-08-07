@@ -6,7 +6,7 @@
   <link href="https://mrmengqiushisan.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrmengqiushisan.github.io/"/>
-  <updated>2023-08-07T14:38:47.898Z</updated>
+  <updated>2023-08-07T15:21:00.455Z</updated>
   <id>https://mrmengqiushisan.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>高质量编程及编程规范</title>
+    <link href="https://mrmengqiushisan.github.io/2023/080737510.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/080737510.html</id>
+    <published>2023-08-07T15:17:59.000Z</published>
+    <updated>2023-08-07T15:21:00.455Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;高质量编程&lt;/p&gt;
+&lt;h3 id=&quot;代码格式&quot;&gt;&lt;a href=&quot;#代码格式&quot; class=&quot;headerlink&quot; title=&quot;代码格式&quot;&gt;&lt;/a&gt;代码格式&lt;/h3&gt;&lt;p&gt;gofmt go语言官方提供的工具，能自动格式化go语言代码为官方统一风格&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="编程规范" scheme="https://mrmengqiushisan.github.io/categories/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+  </entry>
   
   <entry>
     <title>HTTP</title>
