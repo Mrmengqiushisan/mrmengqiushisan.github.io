@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo使用指南, 孟秋十三">
-    <meta name="description" content="首先需要安装Nodejs打开网站Nodejs.org进行下载
-window下打开powershell进行操作node -v	#查看node版本
-npm -v	#查看npm版本
-npm install -g cnpm --registry=h">
+    <meta name="keywords" content="atomic操作, 孟秋十三">
+    <meta name="description" content="简介C++原子变量是一种多线程编程中常用的同步机制，它能够确保对共享变量的操作在执行时不会被其他线程的操作干扰，从而避免竞态条件和死锁等问题。
+原子变量可以看作是一种特殊的类型，它具有类似于普通变量的操作，但是这些操作都是原子级别的，即要么">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@ npm install -g cnpm --registry=h">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo使用指南 | 孟秋十三</title>
+    <title>atomic操作 | 孟秋十三</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -340,12 +338,12 @@ npm install -g cnpm --registry=h">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo使用指南</h1>
+                    <h1 class="description center-align post-title">atomic操作</h1>
                 </div>
             </div>
         </div>
@@ -369,8 +367,16 @@ npm install -g cnpm --registry=h">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/web/">
-                                <span class="chip bg-color">web</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/thread/">
+                                <span class="chip bg-color">thread</span>
+                            </a>
+                        
+                            <a href="/tags/atomic/">
+                                <span class="chip bg-color">atomic</span>
                             </a>
                         
                     </div>
@@ -381,8 +387,8 @@ npm install -g cnpm --registry=h">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" class="post-category">
-                                博客教程
+                            <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-category">
+                                多线程
                             </a>
                         
                     </div>
@@ -394,7 +400,7 @@ npm install -g cnpm --registry=h">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-06
+                    2023-08-07
                 </div>
                 
 
@@ -415,43 +421,108 @@ npm install -g cnpm --registry=h">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="首先需要安装Nodejs"><a href="#首先需要安装Nodejs" class="headerlink" title="首先需要安装Nodejs"></a>首先需要安装Nodejs</h2><p>打开网站<code>Nodejs.org</code>进行下载</p>
-<h2 id="window下打开powershell进行操作"><a href="#window下打开powershell进行操作" class="headerlink" title="window下打开powershell进行操作"></a>window下打开powershell进行操作</h2><pre class=" language-powershell"><code class="language-powershell">node <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看node版本</span>
-npm <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看npm版本</span>
-npm install <span class="token operator">-</span>g cnpm <span class="token operator">--</span>registry=http:<span class="token operator">/</span><span class="token operator">/</span>registry<span class="token punctuation">.</span>npm<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>org	<span class="token comment" spellcheck="true">#安装淘宝的cnpm 管理器</span>
-cnpm <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看cnpm版本</span>
-cnpm install <span class="token operator">-</span>g hexo<span class="token operator">-</span><span class="token function">cli</span>    <span class="token comment" spellcheck="true">#安装hexo框架</span>
-hexo <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看hexo版本</span>
-mkdir blog	<span class="token comment" spellcheck="true">#创建blog目录</span>
-cd blog	 <span class="token comment" spellcheck="true">#进入blog目录</span>
-sudo hexo init 	<span class="token comment" spellcheck="true">#生成博客 初始化博客</span>
-hexo s	<span class="token comment" spellcheck="true">#启动本地博客服务</span>
-http:<span class="token operator">/</span><span class="token operator">/</span>localhost:4000<span class="token operator">/</span>	<span class="token comment" spellcheck="true">#本地访问地址</span>
-hexo n <span class="token string">"我的第一篇文章"</span> <span class="token comment" spellcheck="true">#创建新的文章 </span>
-<span class="token comment" spellcheck="true">#返回blog目录</span>
-hexo clean <span class="token comment" spellcheck="true">#清理</span>
-hexo g <span class="token comment" spellcheck="true">#生成</span>
-<span class="token comment" spellcheck="true">#Github创建一个新的仓库 YourGithubName.github.io</span>
-cnpm install <span class="token operator">--</span>save hexo<span class="token operator">-</span>deployer<span class="token operator">-</span>git <span class="token comment" spellcheck="true">#在blog目录下安装git部署插件</span>
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>C++原子变量是一种多线程编程中常用的同步机制，它能够确保对共享变量的操作在执行时不会被其他线程的操作干扰，从而避免竞态条件和死锁等问题。</p>
+<p>原子变量可以看作是一种特殊的类型，它具有类似于普通变量的操作，但是这些操作都是原子级别的，即要么全部完成，要么全部未完成。C++标准库提供了丰富的原子类型，包括整型、指针、布尔值等，使用方法也非常简单，只需要通过std::atomic定义一个原子变量即可，其中T表示变量的类型。</p>
+<p>在普通的变量中，并发的访问它可能会导致数据竞争，竞争的后果会导致操作过程不会按照正确的顺序进行操作。</p>
+<h2 id="is-lock-free函数"><a href="#is-lock-free函数" class="headerlink" title="is_lock_free函数"></a>is_lock_free函数</h2><p>is_lock_free函数是一个成员函数，用于检查当前atomic对象是否支持无锁操作。调用此成员函数不会启动任何数据竞争。</p>
+<pre class=" language-C++"><code class="language-C++">bool is_lock_free() const volatile noexcept;
+bool is_lock_free() const noexcept;
 </code></pre>
-<h2 id="配置-config-yml文件"><a href="#配置-config-yml文件" class="headerlink" title="配置_config.yml文件"></a>配置_config.yml文件</h2><pre class=" language-powershell"><code class="language-powershell">  <span class="token comment" spellcheck="true"># Deployment</span>
-    <span class="token comment" spellcheck="true">## Docs: https://hexo.io/docs/deployment.html</span>
-    deploy:
-          <span class="token function">type</span>: <span class="token string">'git'</span>
-           repo: git@github<span class="token punctuation">.</span>com:Mrmengqiushisan<span class="token operator">/</span>mrmengqiushisan<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io<span class="token punctuation">.</span>git
-          branch: main
+<p>返回值：如果当前atomic对象支持无锁操作，则返回true；否则返回false。</p>
+<pre class=" language-C++"><code class="language-C++">#include <iostream>
+#include <atomic>
+ 
+int main()
+&#123;
+    std::atomic<int> a;
+    std::cout << std::boolalpha                // 显示 true 或 false，而不是 1 或 0
+              << "std::atomic<int> is "
+              << (a.is_lock_free() ? "" : "not ")
+              << "lock-free\n";
+ 
+    std::atomic_flag f;
+    std::cout << "std::atomic_flag is "
+              << (f.is_lock_free() ? "" : "not ")
+              << "lock-free\n";
+&#125;
 </code></pre>
-<h2 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h2><pre class=" language-powershell"><code class="language-powershell">hexo d	<span class="token comment" spellcheck="true">#部署到Github仓库里</span>
-https:<span class="token operator">/</span><span class="token operator">/</span>mrmengqiushisan<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io<span class="token operator">/</span>  <span class="token comment" spellcheck="true">#访问这个地址可以查看博客</span>
+<pre class=" language-C++"><code class="language-C++">std::atomic<int> is not lock-free
+std::atomic_flag is lock-free
 </code></pre>
-<h2 id="主题更改"><a href="#主题更改" class="headerlink" title="主题更改"></a>主题更改</h2><pre class=" language-powershell"><code class="language-powershell">git clone https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>litten<span class="token operator">/</span>hexo<span class="token operator">-</span>theme<span class="token operator">-</span>yilia<span class="token punctuation">.</span>git themes<span class="token operator">/</span>yilia  <span class="token comment" spellcheck="true">#下载yilia主题到本地</span>
-<span class="token comment" spellcheck="true">#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</span>
-hexo c	<span class="token comment" spellcheck="true">#清理一下</span>
-hexo g	<span class="token comment" spellcheck="true">#生成</span>
-hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓库</span>
+<p>示例中，首先定义了一个atomic类型的对象a和一个atomic_flag类型的对象f，并分别调用了它们的is_lock_free函数来检查它们是否支持无锁操作。由于int类型可能会有多个字节，所以它可能需要加锁才能保证原子性，因此a.is_lock_free()返回false；而atomic_flag类型是一个布尔型（只占一个字节），所以它可以使用汇编指令来实现无锁操作，因此f.is_lock_free()返回true。</p>
+<h2 id="store函数"><a href="#store函数" class="headerlink" title="store函数"></a>store函数</h2><p>std::atomic::store()是一个成员函数，用于将给定的值存储到原子对象中。</p>
+<pre class=" language-C++"><code class="language-C++">void store(T desired, std::memory_order order = std::memory_order_seq_cst) volatile noexcept;
+void store(T desired, std::memory_order order = std::memory_order_seq_cst) noexcept;
+//desired：要存储的值。
+//order：存储操作的内存顺序。默认是std::memory_order_seq_cst（顺序一致性）。
 </code></pre>
-<h2 id="主题更换链接"><a href="#主题更换链接" class="headerlink" title="主题更换链接"></a>主题更换链接</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/"><code>https://hexo.io/themes/</code></a></p>
-<h2 id="基于Hexo的matery主题搭建博客并优化"><a href="#基于Hexo的matery主题搭建博客并优化" class="headerlink" title="基于Hexo的matery主题搭建博客并优化"></a>基于Hexo的matery主题搭建博客并优化</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jspnetcn/article/details/104111651"><code>https://blog.csdn.net/jspnetcn/article/details/104111651</code></a></p>
+<p>示例</p>
+<pre class=" language-C++"><code class="language-C++">#include <iostream>
+#include <atomic>
+
+int main()
+&#123;
+    std::atomic<int> atomic_int(0);
+
+    int val = 10;
+    atomic_int.store(val);
+
+    std::cout << "Value stored in atomic object: " << atomic_int << std::endl;
+
+    return 0;
+&#125;
+</code></pre>
+<pre class=" language-C++"><code class="language-C++">Value stored in atomic object: 10
+</code></pre>
+<p>例子中，首先定义了一个std::atomic类型的原子变量atomic_int，初始值为0。然后，使用store()函数将变量val的值存储到atomic_int中。最后，打印出存储在原子对象中的值。</p>
+<p>需要注意的是，在多线程环境下使用原子变量和操作时，需要使用适当的内存顺序来保证数据的正确性和一致性。因此，store()函数中的order参数可以用来指定不同的内存顺序。如果不确定如何选择内存顺序，请使用默认值std::memory_order_seq_cst，它是最常用和最保险的。</p>
+<h2 id="load函数"><a href="#load函数" class="headerlink" title="load函数"></a>load函数</h2><p>load函数用于获取原子变量的当前值。它有以下两种形式：</p>
+<pre class=" language-C++"><code class="language-C++">T load(memory_order order = memory_order_seq_cst) const noexcept;
+operator T() const noexcept;
+</code></pre>
+<p>其中，第一种形式是显式调用load函数，第二种形式是通过重载类型转换运算符实现隐式调用。</p>
+<p>load函数的参数memory_order表示内存序，也就是对原子变量的读操作要遵循哪种内存模型。</p>
+<p>使用load函数时，如果不指定memory_order，则默认为memory_order_seq_cst。</p>
+<p>load函数的返回值类型为T，即原子变量的类型。在使用load函数时需要指定类型参数T。如果使用第二种形式的load函数，则无需指定类型参数T，程序会自动根据上下文推断出类型。</p>
+<pre class=" language-C++"><code class="language-C++">std::atomic<int> foo (0);
+
+int x;
+do &#123;
+    x = foo.load(std::memory_order_relaxed);  // get value atomically
+&#125; while (x==0);
+</code></pre>
+<h2 id="exchange函数"><a href="#exchange函数" class="headerlink" title="exchange函数"></a>exchange函数</h2><p>访问和修改包含的值，将包含的值替换并返回它前面的值。</p>
+<pre class=" language-C++"><code class="language-C++">template< class T >
+T exchange( volatile std::atomic<T>* obj, T desired );
+</code></pre>
+<p>其中，obj参数指向需要替换值的atomic对象，desired参数为期望替换成的值。如果替换成功，则返回原来的值。</p>
+<p>整个操作是原子的（原子读-修改-写操作）：从读取（要返回）值的那一刻到此函数修改值的那一刻，该值不受其他线程的影响。</p>
+<p>示例</p>
+<pre class=" language-C++"><code class="language-C++">#include <iostream>       // std::cout
+#include <atomic>         // std::atomic
+#include <thread>         // std::thread
+#include <vector>         // std::vector
+
+std::atomic<bool> ready (false);
+std::atomic<bool> winner (false);
+
+void count1m (int id) &#123;
+  while (!ready) &#123;&#125;                  // wait for the ready signal
+  for (int i=0; i<1000000; ++i) &#123;&#125;   // go!, count to 1 million
+  if (!winner.exchange(true)) &#123; std::cout << "thread #" << id << " won!\n"; &#125;
+&#125;;
+
+int main ()
+&#123;
+  std::vector<std::thread> threads;
+  std::cout << "spawning 10 threads that count to 1 million...\n";
+  for (int i=1; i<=10; ++i) threads.push_back(std::thread(count1m,i));
+  ready = true;
+  for (auto& th : threads) th.join();
+
+  return 0;
+&#125;
+</code></pre>
 
                 
             </div>
@@ -478,7 +549,7 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mrmengqiushisan.github.io/2023/080644954.html">https://mrmengqiushisan.github.io/2023/080644954.html</a>
+                    <a href="https://mrmengqiushisan.github.io/2023/080737660.html">https://mrmengqiushisan.github.io/2023/080737660.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -516,8 +587,16 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/web/">
-                                    <span class="chip bg-color">web</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/thread/">
+                                    <span class="chip bg-color">thread</span>
+                                </a>
+                            
+                                <a href="/tags/atomic/">
+                                    <span class="chip bg-color">atomic</span>
                                 </a>
                             
                         </div>
@@ -595,7 +674,7 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
         repo: '',
         owner: '',
         admin: null,
-        id: '2023-08-06T00-58-50',
+        id: '2023-08-07T15-19-31',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -619,7 +698,7 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sun Aug 06 2023 00:58:50 GMT+0800',
+    id: 'Mon Aug 07 2023 15:19:31 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -644,9 +723,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://mrmengqiushisan.github.io/2023/080644954.html';
-        this.page.identifier = '/2023/080644954.html';
-        this.page.title = 'Hexo使用指南';
+        this.page.url = 'https://mrmengqiushisan.github.io/2023/080737660.html';
+        this.page.identifier = '/2023/080737660.html';
+        this.page.title = 'atomic操作';
     };
     let disqus_shortname = '';
 
@@ -702,13 +781,13 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/080716572.html">
+                <a href="/2023/080756526.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="开机启动的两种方式">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="IOCP工作原理">
                         
-                        <span class="card-title">开机启动的两种方式</span>
+                        <span class="card-title">IOCP工作原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -721,6 +800,63 @@ gitment.render('gitment-content');
                         <span class="publish-date">
                             <i class="far fa-clock fa-fw icon-date"></i>2023-08-07
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    高并发编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/thread/">
+                        <span class="chip bg-color">thread</span>
+                    </a>
+                    
+                    <a href="/tags/IOCP/">
+                        <span class="chip bg-color">IOCP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/080730182.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="管理权限的检查以及获得">
+                        
+                        <span class="card-title">管理权限的检查以及获得</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -740,47 +876,10 @@ gitment.render('gitment-content');
                         <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/MFC/">
-                        <span class="chip bg-color">MFC</span>
+                    <a href="/tags/hToken/">
+                        <span class="chip bg-color">hToken</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/080516107.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Tao Wang
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>

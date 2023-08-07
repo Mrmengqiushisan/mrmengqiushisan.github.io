@@ -4,11 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo使用指南, 孟秋十三">
-    <meta name="description" content="首先需要安装Nodejs打开网站Nodejs.org进行下载
-window下打开powershell进行操作node -v	#查看node版本
-npm -v	#查看npm版本
-npm install -g cnpm --registry=h">
+    <meta name="keywords" content="IOCP工作原理, 孟秋十三">
+    <meta name="description" content="IOCP基本原理IOCP 的基本原理是通过事件驱动的方式来处理 I&amp;#x2F;O 请求，以避免传统的阻塞式 I&amp;#x2F;O 操作带来的性能问题。具体来说，IOCP 通过以下几个步骤完成异步 I&amp;#x2F;O 操作：
+
+应用程序首先创建一个">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@ npm install -g cnpm --registry=h">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo使用指南 | 孟秋十三</title>
+    <title>IOCP工作原理 | 孟秋十三</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -340,12 +339,12 @@ npm install -g cnpm --registry=h">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo使用指南</h1>
+                    <h1 class="description center-align post-title">IOCP工作原理</h1>
                 </div>
             </div>
         </div>
@@ -369,8 +368,16 @@ npm install -g cnpm --registry=h">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/web/">
-                                <span class="chip bg-color">web</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/thread/">
+                                <span class="chip bg-color">thread</span>
+                            </a>
+                        
+                            <a href="/tags/IOCP/">
+                                <span class="chip bg-color">IOCP</span>
                             </a>
                         
                     </div>
@@ -381,8 +388,8 @@ npm install -g cnpm --registry=h">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" class="post-category">
-                                博客教程
+                            <a href="/categories/%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="post-category">
+                                高并发编程
                             </a>
                         
                     </div>
@@ -394,7 +401,7 @@ npm install -g cnpm --registry=h">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-06
+                    2023-08-07
                 </div>
                 
 
@@ -415,43 +422,390 @@ npm install -g cnpm --registry=h">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="首先需要安装Nodejs"><a href="#首先需要安装Nodejs" class="headerlink" title="首先需要安装Nodejs"></a>首先需要安装Nodejs</h2><p>打开网站<code>Nodejs.org</code>进行下载</p>
-<h2 id="window下打开powershell进行操作"><a href="#window下打开powershell进行操作" class="headerlink" title="window下打开powershell进行操作"></a>window下打开powershell进行操作</h2><pre class=" language-powershell"><code class="language-powershell">node <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看node版本</span>
-npm <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看npm版本</span>
-npm install <span class="token operator">-</span>g cnpm <span class="token operator">--</span>registry=http:<span class="token operator">/</span><span class="token operator">/</span>registry<span class="token punctuation">.</span>npm<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>org	<span class="token comment" spellcheck="true">#安装淘宝的cnpm 管理器</span>
-cnpm <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看cnpm版本</span>
-cnpm install <span class="token operator">-</span>g hexo<span class="token operator">-</span><span class="token function">cli</span>    <span class="token comment" spellcheck="true">#安装hexo框架</span>
-hexo <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看hexo版本</span>
-mkdir blog	<span class="token comment" spellcheck="true">#创建blog目录</span>
-cd blog	 <span class="token comment" spellcheck="true">#进入blog目录</span>
-sudo hexo init 	<span class="token comment" spellcheck="true">#生成博客 初始化博客</span>
-hexo s	<span class="token comment" spellcheck="true">#启动本地博客服务</span>
-http:<span class="token operator">/</span><span class="token operator">/</span>localhost:4000<span class="token operator">/</span>	<span class="token comment" spellcheck="true">#本地访问地址</span>
-hexo n <span class="token string">"我的第一篇文章"</span> <span class="token comment" spellcheck="true">#创建新的文章 </span>
-<span class="token comment" spellcheck="true">#返回blog目录</span>
-hexo clean <span class="token comment" spellcheck="true">#清理</span>
-hexo g <span class="token comment" spellcheck="true">#生成</span>
-<span class="token comment" spellcheck="true">#Github创建一个新的仓库 YourGithubName.github.io</span>
-cnpm install <span class="token operator">--</span>save hexo<span class="token operator">-</span>deployer<span class="token operator">-</span>git <span class="token comment" spellcheck="true">#在blog目录下安装git部署插件</span>
+                <h2 id="IOCP基本原理"><a href="#IOCP基本原理" class="headerlink" title="IOCP基本原理"></a>IOCP基本原理</h2><p>IOCP 的基本原理是通过事件驱动的方式来处理 I&#x2F;O 请求，以避免传统的阻塞式 I&#x2F;O 操作带来的性能问题。具体来说，IOCP 通过以下几个步骤完成异步 I&#x2F;O 操作：</p>
+<ol>
+<li><p>应用程序首先创建一个或多个 I&#x2F;O 端口，并将它们关联到套接字或文件句柄上。</p>
+</li>
+<li><p>当应用程序需要进行 I&#x2F;O 操作时，它调用系统级别的 API，将请求提交到 I&#x2F;O 端口上。</p>
+</li>
+<li><p>操作系统内核将 I&#x2F;O 请求与相应的 I&#x2F;O 端口关联，并立即返回，使得应用程序可以继续执行其他操作。</p>
+</li>
+<li><p>内核在后台异步地执行 I&#x2F;O 操作，并将结果存储在完成队列中。</p>
+</li>
+<li><p>当 I&#x2F;O 操作完成时，内核会通知完成端口，并将完成信息添加到完成队列中。</p>
+</li>
+<li><p>应用程序通过调用 GetQueuedCompletionStatus() 函数获取完成队列中的已完成请求，并按需处理它们。</p>
+</li>
+<li><p>如果完成队列为空，则应用程序可以等待新的完成事件发生，或者继续执行其他操作。</p>
+<p>以上过程中，工作者线程负责从完成队列中取出已完成的 I&#x2F;O 请求，并进行相应的处理。由于这些</p>
+<p>线程都是从线程池中获取的，因此可以有效地管理和控制线程的数量和使用情况，从而提高系统的效率和稳定性。</p>
+</li>
+</ol>
+<pre class=" language-C++"><code class="language-C++">void func(void* arg) &#123;
+    std::string* pstr = (std::string*)arg;
+    if (pstr != NULL) &#123;
+        printf("pop from list:%s\r\n", pstr->c_str());
+        delete pstr;
+    &#125;else&#123;
+      printf("List is empty,no data!\r\n");
+    &#125;
+&#125;
 </code></pre>
-<h2 id="配置-config-yml文件"><a href="#配置-config-yml文件" class="headerlink" title="配置_config.yml文件"></a>配置_config.yml文件</h2><pre class=" language-powershell"><code class="language-powershell">  <span class="token comment" spellcheck="true"># Deployment</span>
-    <span class="token comment" spellcheck="true">## Docs: https://hexo.io/docs/deployment.html</span>
-    deploy:
-          <span class="token function">type</span>: <span class="token string">'git'</span>
-           repo: git@github<span class="token punctuation">.</span>com:Mrmengqiushisan<span class="token operator">/</span>mrmengqiushisan<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io<span class="token punctuation">.</span>git
-          branch: main
+<pre class=" language-C++"><code class="language-C++">//用于定义传输过程中的枚举类型
+enum 
+&#123;
+    IocpListEmpty,
+    IocpListPush,
+    IocpListPop
+&#125;;
 </code></pre>
-<h2 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h2><pre class=" language-powershell"><code class="language-powershell">hexo d	<span class="token comment" spellcheck="true">#部署到Github仓库里</span>
-https:<span class="token operator">/</span><span class="token operator">/</span>mrmengqiushisan<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io<span class="token operator">/</span>  <span class="token comment" spellcheck="true">#访问这个地址可以查看博客</span>
+<pre class=" language-C++"><code class="language-C++">//设计用于传输数据的数据结构
+typedef struct IocpParam &#123;
+    IocpParam(int op, const char* sData, _beginthread_proc_type cb=NULL) 
+        :nOperator(op), strData(sData),cbFunc(cb) &#123;&#125;
+    IocpParam() :nOperator(-1) &#123;&#125;
+    int nOperator;//操作
+    std::string strData;//数据
+    _beginthread_proc_type cbFunc;//回调 线程中的回调函数类型
+&#125;IOCP_PARAM;
 </code></pre>
-<h2 id="主题更改"><a href="#主题更改" class="headerlink" title="主题更改"></a>主题更改</h2><pre class=" language-powershell"><code class="language-powershell">git clone https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>litten<span class="token operator">/</span>hexo<span class="token operator">-</span>theme<span class="token operator">-</span>yilia<span class="token punctuation">.</span>git themes<span class="token operator">/</span>yilia  <span class="token comment" spellcheck="true">#下载yilia主题到本地</span>
-<span class="token comment" spellcheck="true">#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</span>
-hexo c	<span class="token comment" spellcheck="true">#清理一下</span>
-hexo g	<span class="token comment" spellcheck="true">#生成</span>
-hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓库</span>
+<pre class=" language-C++"><code class="language-C++">void threadmain(HANDLE hIOCP) &#123;
+    std::list<std::string>lstString;
+    DWORD dwTransferred = 0;
+    ULONG_PTR CompletionKey = 0;
+    OVERLAPPED* Overlapped = NULL;
+    int count = 0, count0 = 0, total = 0;
+    while (GetQueuedCompletionStatus(hIOCP, &dwTransferred, &CompletionKey, &Overlapped, INFINITE)) &#123;
+        if (dwTransferred == 0 || CompletionKey == NULL) &#123;
+            printf("thread is prepare to exit!\r\n");
+            break;
+        &#125;
+        IOCP_PARAM* pParam = (IOCP_PARAM*)CompletionKey;
+        if (pParam->nOperator == IocpListPush) &#123;
+            printf("push string %s %p \r\n", pParam->strData.c_str(), Overlapped);
+            lstString.push_back(pParam->strData);
+            count++;
+        &#125;
+        else if (pParam->nOperator == IocpListPop) &#123;
+            printf("%p size %d \r\n", pParam->cbFunc, lstString.size());
+            std::string str;
+            if (lstString.size() > 0) &#123;
+                str = lstString.front();
+                lstString.pop_front();
+            &#125;
+            if (pParam->cbFunc) &#123;
+                pParam->cbFunc(&str);
+            &#125;
+            count0++;
+        &#125;
+        else if (pParam->nOperator == IocpListEmpty) &#123;
+            lstString.clear();
+        &#125;
+        delete pParam;
+        printf("total %d \r\n", ++total);
+    &#125;
+    lstString.clear();
+    printf("thread exit count %d  count0 %d\r\n", count, count0);
+&#125;
+//由于存在内存泄露，所以采用这种形式调用线程函数
+void threadQueueEntry(HANDLE hIOCP) &#123;
+    threadmain(hIOCP);
+    _endthread();
+&#125;
+//注意为什么要分为两个函数写，这是因为内存泄漏的问题
+////代码到此为止，会导致本地对象无法调用析构，从而使得内存发生泄漏
+//切记 线程入口函数要和线程主体函数分开
 </code></pre>
-<h2 id="主题更换链接"><a href="#主题更换链接" class="headerlink" title="主题更换链接"></a>主题更换链接</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/"><code>https://hexo.io/themes/</code></a></p>
-<h2 id="基于Hexo的matery主题搭建博客并优化"><a href="#基于Hexo的matery主题搭建博客并优化" class="headerlink" title="基于Hexo的matery主题搭建博客并优化"></a>基于Hexo的matery主题搭建博客并优化</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jspnetcn/article/details/104111651"><code>https://blog.csdn.net/jspnetcn/article/details/104111651</code></a></p>
+<pre class=" language-C++"><code class="language-C++">//创建完成端口映射->得到句柄(句柄绑定内核)
+//创建线程，处理队列
+//创建完成端口
+HANDLE hIOCP = INVALID_HANDLE_VALUE;//Input Output Completion Port
+//最后一个参数表示能够同时访问队列的线程数
+//参数一：代表一个句柄，如果是做文件，可以是文件句柄，如果是做串口，可以做串口句柄
+//参数二：代表已经存在的完成端口句柄
+//参数三：代表Key
+hIOCP = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, NULL, 1);//epoll的区别点
+if (hIOCP == INVALID_HANDLE_VALUE || (hIOCP == NULL)) &#123;
+        printf("Create ICOP Failed!%d\r\n", GetLastError());
+        return 1;
+&#125;
+//创建线程 参数一代表线程名，参数二代表新线程堆栈的大小，一般为0，参数三代表调用线程函数的参数
+HANDLE hThread = (HANDLE)_beginthread(threadQueueEntry, 0, hIOCP);
+printf("press any key to exit ...\r\n");//按下任意键结束
+ULONGLONG tick = GetTickCount64();
+ULONGLONG tick0 = GetTickCount64();
+int count = 0, count0 = 0;
+while(_kbhit()==0)&#123;
+  if (GetTickCount64() - tick0 > 1300) &#123;
+            PostQueuedCompletionStatus(hIOCP, sizeof(IOCP_PARAM), 
+                (ULONG_PTR)new IOCP_PARAM(IocpListPop, "hello world",func), NULL);
+            tick0 = GetTickCount64();
+            count0++;
+        &#125;
+        if (GetTickCount64() - tick > 2000) &#123;
+            PostQueuedCompletionStatus(hIOCP, sizeof(IOCP_PARAM), 
+                (ULONG_PTR)new IOCP_PARAM(IocpListPush, "hello world"), NULL);
+            tick = GetTickCount64();
+            count++;
+        &#125;
+        Sleep(1);
+&#125;
+CloseHandle(hIOCP);//关闭IOCP
+printf("exit done count %d count0 %d \r\n", count, count0);
+exit(0);
+</code></pre>
+<h2 id="IOCP设计"><a href="#IOCP设计" class="headerlink" title="IOCP设计"></a>IOCP设计</h2><pre class=" language-C++"><code class="language-C++">#pragma once
+#include<string>
+#include <atomic>
+#include<list>
+template<class T>
+class CWTQueue
+&#123;
+//线程安全的队列(利用IOCP实现)
+public:
+    enum
+    &#123;
+        WQNone,
+        WQPush,
+        WQPop,
+        WQSize,
+        WQClear
+    &#125;;
+    typedef struct IocpParam &#123;
+        IocpParam(int op, const T& sData, HANDLE hEve = NULL)
+            :nOperator(op), Data(sData), hEvent(hEve) &#123;&#125;
+        IocpParam() :nOperator(WQNone) &#123;&#125;
+        size_t	nOperator;//操作
+        T		Data;//数据
+        HANDLE	hEvent;//pop操作需要的
+    &#125;PPARAM;//用于投递信息的结构体
+public:
+    CWTQueue();
+    ~CWTQueue();
+    bool PushBack(const T& data);
+    bool PopFront(T& data);
+    size_t Size();
+    bool Clear();
+private:
+    static void threadEntry(void* arg);
+    void threadMain();
+    void DealParam(PPARAM* pParam);
+private:
+    std::list<T>		m_lstData;
+    HANDLE				m_hCompletetionPort;
+    HANDLE				m_hThread;
+    std::atomic<bool>	m_lock;
+&#125;;
+
+template<class T>
+inline CWTQueue<T>::CWTQueue()&#123;
+    m_hCompletetionPort = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, NULL, 1);
+    m_hThread = INVALID_HANDLE_VALUE;
+    if (m_hCompletetionPort != NULL) &#123;
+        m_hThread = (HANDLE)_beginthread(&CWTQueue::threadEntry, 0, this);
+    &#125;
+&#125;
+
+template<class T>
+inline CWTQueue<T>::~CWTQueue()&#123;
+    if (m_lock)return;
+    m_lock = true;
+    PostQueuedCompletionStatus(m_hCompletetionPort, 0, NULL, NULL);
+    WaitForSingleObject(m_hThread, INFINITE);
+    //防御性编程先置空 在释放
+    if (m_hCompletetionPort != NULL) &#123;
+        HANDLE hTemp = m_hCompletetionPort;
+        m_hCompletetionPort = NULL;
+        CloseHandle(hTemp);
+    &#125;
+&#125;
+
+template<class T>
+inline bool CWTQueue<T>::PushBack(const T& data)&#123;
+    IocpParam* pParam = new IocpParam(WQPush, data);
+    if (m_lock == true) &#123;
+        delete pParam;
+        return false;
+    &#125;
+    bool ret = PostQueuedCompletionStatus(m_hCompletetionPort, sizeof(PPARAM), (ULONG_PTR)pParam, NULL);
+    if (ret == false)delete pParam;
+    //printf("push back done %d %08p\r\n", ret, (void*)pParam);
+    return ret;
+&#125;
+
+template<class T>
+inline bool CWTQueue<T>::PopFront(T& data)&#123;
+    HANDLE	hEvent = CreateEvent(NULL,TRUE,FALSE,NULL);
+    IocpParam pParam(WQPop, data, hEvent);
+    if (m_lock) &#123;
+        if (hEvent)CloseHandle(hEvent);
+        return -1;
+    &#125;
+    bool ret = PostQueuedCompletionStatus(m_hCompletetionPort, sizeof(PPARAM), (ULONG_PTR)&pParam, NULL);
+    if (ret == false) &#123;
+        CloseHandle(hEvent);
+        return false;
+    &#125;
+    ret = WaitForSingleObject(hEvent, INFINITE) == WAIT_OBJECT_0;
+    if (ret) data = pParam.Data;
+    return ret;
+&#125;
+
+template<class T>
+inline size_t CWTQueue<T>::Size()
+&#123;
+    HANDLE	hEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
+    IocpParam pParam(WQSize, T(), hEvent);
+    if (m_lock) &#123;
+        if(hEvent)CloseHandle(hEvent);
+        return -1;
+    &#125;
+    bool ret = PostQueuedCompletionStatus(m_hCompletetionPort, sizeof(PPARAM), (ULONG_PTR)&pParam, NULL);
+    if (ret == false) &#123;
+        CloseHandle(hEvent);
+        return -1;
+    &#125;
+    ret = WaitForSingleObject(hEvent, INFINITE) == WAIT_OBJECT_0;
+    if (ret) return pParam.nOperator;
+    return ret;
+&#125;
+
+template<class T>
+inline bool CWTQueue<T>::Clear()
+&#123;
+    if (m_lock == true)return false;
+    IocpParam* pParam = new IocpParam(WQClear, T());
+    bool ret = PostQueuedCompletionStatus(m_hCompletetionPort, sizeof(PPARAM), (ULONG_PTR)pParam, NULL);
+    if (ret == false)delete pParam;
+    //printf("Clear %08p\r\n", (void*)pParam);
+    return true;
+&#125;
+
+template<class T>
+inline void CWTQueue<T>::threadEntry(void* arg)
+&#123;
+    CWTQueue<T>* thiz = (CWTQueue<T>*)arg;
+    thiz->threadMain();
+    _endthread();
+&#125;
+
+template<class T>
+inline void CWTQueue<T>::threadMain()&#123;
+    PPARAM* pParam = NULL;
+    ULONG_PTR CompletionKey = 0;
+    OVERLAPPED* Overlapped = NULL;
+    DWORD dwTransferred = 0;
+    while (GetQueuedCompletionStatus(m_hCompletetionPort, 
+        &dwTransferred, &CompletionKey, &Overlapped, INFINITE)) &#123;
+        if (dwTransferred == 0 || CompletionKey == NULL) &#123;
+            printf("thread is prepare to exit!\r\n");
+            break;
+        &#125;
+        pParam = (PPARAM*)CompletionKey;
+        DealParam(pParam);
+    &#125;
+    //防御性编程
+    while ((m_hCompletetionPort,
+        &dwTransferred, &CompletionKey, &Overlapped, 0)) &#123;
+        if (dwTransferred == 0 || CompletionKey == NULL) &#123;
+            printf("thread is prepare to exit!\r\n");
+            continue;
+        &#125;
+        pParam = (PPARAM*)CompletionKey;
+        DealParam(pParam);
+    &#125;
+    HANDLE hTemp = m_hCompletetionPort;
+    m_hCompletetionPort = NULL;
+    CloseHandle(hTemp);
+&#125;
+
+template<class T>
+inline void CWTQueue<T>::DealParam(PPARAM* pParam)
+&#123;
+    switch (pParam->nOperator)
+    &#123;
+    case WQPush: &#123;
+        m_lstData.push_back(pParam->Data);
+        delete pParam;
+        //printf("delete %08p\r\n", (void*)pParam);
+        break;
+    &#125;
+    case WQPop: &#123;
+        if (m_lstData.size() > 0) &#123;
+            pParam->Data = m_lstData.front();
+            m_lstData.pop_front();
+        &#125;
+        if (pParam->hEvent != NULL) &#123;
+            SetEvent(pParam->hEvent);
+        &#125;
+        break;
+    &#125;
+    case WQSize: &#123;
+        pParam->nOperator = m_lstData.size();
+        if (pParam->hEvent != NULL) &#123;
+            SetEvent(pParam->hEvent);
+        &#125;
+        break;
+    &#125;
+    case WQClear: &#123;
+        m_lstData.clear();
+        delete pParam;
+        //printf("delete %08p\r\n", (void*)pParam);
+        break;
+    &#125;
+    default:
+        OutputDebugStringA("unKnown operator!\r\n");
+        break;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h2><pre class=" language-C++"><code class="language-C++">/*
+* 1 Bug测试/功能测试
+* 2 关键因素的测试/内存泄漏 运行的稳定性 条件性
+* 3 压力测试/可靠性测试
+* 4 性能测试
+*/
+void test(int nm) &#123;
+    //性能：CWTQueue push性能高 pop性能仅有1/4
+    //		list 性能push比pop低 
+    printf("The %d start\r\n", nm);
+    CWTQueue<std::string>lstString;
+    ULONGLONG tick0 = GetTickCount64(), tick = GetTickCount64(), total = GetTickCount64();
+    while (GetTickCount64() - total <= 1000) &#123;//完成了端口 把请求与实现 分离了
+        //if (GetTickCount64() - tick0 > 5) &#123;
+            lstString.PushBack("Hello World");
+            tick0 = GetTickCount64();
+        //&#125;
+        //Sleep(1);
+    &#125;
+    size_t count = lstString.Size();
+    printf("exit done size %d \r\n", count);
+    total = GetTickCount64();
+    while (GetTickCount64() - total <= 1000) &#123;
+        //if (GetTickCount64() - tick > 5) &#123;
+            std::string str;
+            lstString.PopFront(str);
+            tick = GetTickCount64();
+            //printf("pop from queue :%s\r\n", str.c_str());
+        //&#125;
+        //Sleep(1);
+    &#125;
+    printf("exit done size %d \r\n", count - lstString.Size());
+    lstString.Clear();
+    std::list<std::string>lstData;
+    total = GetTickCount64();
+    while (GetTickCount64() - total <= 1000) &#123;
+        lstData.push_back("hello World");
+    &#125;
+    count = lstData.size();
+    printf("lstData push_back size %d \r\n", lstData.size());
+    total = GetTickCount64();
+    while (GetTickCount64() - total <= 1000) &#123;
+        if (lstData.size() > 0)lstData.pop_back();
+    &#125;
+    printf("lstData pop_back size %d \r\n", count - lstData.size());
+&#125;
+</code></pre>
 
                 
             </div>
@@ -478,7 +832,7 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mrmengqiushisan.github.io/2023/080644954.html">https://mrmengqiushisan.github.io/2023/080644954.html</a>
+                    <a href="https://mrmengqiushisan.github.io/2023/080756526.html">https://mrmengqiushisan.github.io/2023/080756526.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -516,8 +870,16 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/web/">
-                                    <span class="chip bg-color">web</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/thread/">
+                                    <span class="chip bg-color">thread</span>
+                                </a>
+                            
+                                <a href="/tags/IOCP/">
+                                    <span class="chip bg-color">IOCP</span>
                                 </a>
                             
                         </div>
@@ -595,7 +957,7 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
         repo: '',
         owner: '',
         admin: null,
-        id: '2023-08-06T00-58-50',
+        id: '2023-08-07T15-27-01',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -619,7 +981,7 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sun Aug 06 2023 00:58:50 GMT+0800',
+    id: 'Mon Aug 07 2023 15:27:01 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -644,9 +1006,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://mrmengqiushisan.github.io/2023/080644954.html';
-        this.page.identifier = '/2023/080644954.html';
-        this.page.title = 'Hexo使用指南';
+        this.page.url = 'https://mrmengqiushisan.github.io/2023/080756526.html';
+        this.page.identifier = '/2023/080756526.html';
+        this.page.title = 'IOCP工作原理';
     };
     let disqus_shortname = '';
 
@@ -702,13 +1064,13 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/080716572.html">
+                <a href="/2023/080761350.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="开机启动的两种方式">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="CONTAINING_RECORD宏原理与使用详解">
                         
-                        <span class="card-title">开机启动的两种方式</span>
+                        <span class="card-title">CONTAINING_RECORD宏原理与使用详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -744,6 +1106,14 @@ gitment.render('gitment-content');
                         <span class="chip bg-color">MFC</span>
                     </a>
                     
+                    <a href="/tags/CONTAINING-RECORD/">
+                        <span class="chip bg-color">CONTAINING_RECORD</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/">
+                        <span class="chip bg-color">对象模型</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -755,13 +1125,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/080516107.html">
+                <a href="/2023/080737660.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="atomic操作">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">atomic操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -772,15 +1142,35 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Tao Wang
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-category">
+                                    多线程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/thread/">
+                        <span class="chip bg-color">thread</span>
+                    </a>
+                    
+                    <a href="/tags/atomic/">
+                        <span class="chip bg-color">atomic</span>
+                    </a>
+                    
                 </div>
                 
             </div>

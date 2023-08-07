@@ -4,11 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo使用指南, 孟秋十三">
-    <meta name="description" content="首先需要安装Nodejs打开网站Nodejs.org进行下载
-window下打开powershell进行操作node -v	#查看node版本
-npm -v	#查看npm版本
-npm install -g cnpm --registry=h">
+    <meta name="keywords" content="Go后端基础课, 孟秋十三">
+    <meta name="description" content="函数Go中采用后置返回值的声明方式进行函数的构造，如果要返回多个值，可采用”()“的方式蒋返回类型进行声明，对于返回的变量声明也可以放在括号中，如下所示：
+注意 函数无法进行重载
+package main
+
+import &#34;fmt&#34;
+
+fu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +23,7 @@ npm install -g cnpm --registry=h">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo使用指南 | 孟秋十三</title>
+    <title>Go后端基础课 | 孟秋十三</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -340,12 +343,12 @@ npm install -g cnpm --registry=h">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo使用指南</h1>
+                    <h1 class="description center-align post-title">Go后端基础课</h1>
                 </div>
             </div>
         </div>
@@ -369,8 +372,12 @@ npm install -g cnpm --registry=h">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/web/">
-                                <span class="chip bg-color">web</span>
+                            <a href="/tags/Go/">
+                                <span class="chip bg-color">Go</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                                <span class="chip bg-color">后端</span>
                             </a>
                         
                     </div>
@@ -381,8 +388,8 @@ npm install -g cnpm --registry=h">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" class="post-category">
-                                博客教程
+                            <a href="/categories/Go/" class="post-category">
+                                Go
                             </a>
                         
                     </div>
@@ -394,7 +401,7 @@ npm install -g cnpm --registry=h">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-06
+                    2023-08-07
                 </div>
                 
 
@@ -415,43 +422,628 @@ npm install -g cnpm --registry=h">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="首先需要安装Nodejs"><a href="#首先需要安装Nodejs" class="headerlink" title="首先需要安装Nodejs"></a>首先需要安装Nodejs</h2><p>打开网站<code>Nodejs.org</code>进行下载</p>
-<h2 id="window下打开powershell进行操作"><a href="#window下打开powershell进行操作" class="headerlink" title="window下打开powershell进行操作"></a>window下打开powershell进行操作</h2><pre class=" language-powershell"><code class="language-powershell">node <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看node版本</span>
-npm <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看npm版本</span>
-npm install <span class="token operator">-</span>g cnpm <span class="token operator">--</span>registry=http:<span class="token operator">/</span><span class="token operator">/</span>registry<span class="token punctuation">.</span>npm<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>org	<span class="token comment" spellcheck="true">#安装淘宝的cnpm 管理器</span>
-cnpm <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看cnpm版本</span>
-cnpm install <span class="token operator">-</span>g hexo<span class="token operator">-</span><span class="token function">cli</span>    <span class="token comment" spellcheck="true">#安装hexo框架</span>
-hexo <span class="token operator">-</span>v	<span class="token comment" spellcheck="true">#查看hexo版本</span>
-mkdir blog	<span class="token comment" spellcheck="true">#创建blog目录</span>
-cd blog	 <span class="token comment" spellcheck="true">#进入blog目录</span>
-sudo hexo init 	<span class="token comment" spellcheck="true">#生成博客 初始化博客</span>
-hexo s	<span class="token comment" spellcheck="true">#启动本地博客服务</span>
-http:<span class="token operator">/</span><span class="token operator">/</span>localhost:4000<span class="token operator">/</span>	<span class="token comment" spellcheck="true">#本地访问地址</span>
-hexo n <span class="token string">"我的第一篇文章"</span> <span class="token comment" spellcheck="true">#创建新的文章 </span>
-<span class="token comment" spellcheck="true">#返回blog目录</span>
-hexo clean <span class="token comment" spellcheck="true">#清理</span>
-hexo g <span class="token comment" spellcheck="true">#生成</span>
-<span class="token comment" spellcheck="true">#Github创建一个新的仓库 YourGithubName.github.io</span>
-cnpm install <span class="token operator">--</span>save hexo<span class="token operator">-</span>deployer<span class="token operator">-</span>git <span class="token comment" spellcheck="true">#在blog目录下安装git部署插件</span>
+                <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>Go中采用后置返回值的声明方式进行函数的构造，如果要返回多个值，可采用”()“的方式蒋返回类型进行声明，对于返回的变量声明也可以放在括号中，如下所示：</p>
+<p><strong>注意 函数无法进行重载</strong></p>
+<pre class=" language-golang"><code class="language-golang">package main
+
+import "fmt"
+
+func add(a int, b int) int &#123;
+    return a + b
+&#125;
+
+func add2(a, b int) int &#123;
+    return a + b
+&#125;
+
+func exists(m map[string]string, k string) (v string, ok bool) &#123;
+    v, ok = m[k]
+    return v, ok
+&#125;
+func main() &#123;
+    res := add(1, 2)
+    fmt.Println(res)
+    res2 := add2(3, 2)
+    fmt.Println(res2)
+    v, ok := exists(map[string]string&#123;"a": "A"&#125;, "a")
+    fmt.Println(v, ok)
+&#125;
 </code></pre>
-<h2 id="配置-config-yml文件"><a href="#配置-config-yml文件" class="headerlink" title="配置_config.yml文件"></a>配置_config.yml文件</h2><pre class=" language-powershell"><code class="language-powershell">  <span class="token comment" spellcheck="true"># Deployment</span>
-    <span class="token comment" spellcheck="true">## Docs: https://hexo.io/docs/deployment.html</span>
-    deploy:
-          <span class="token function">type</span>: <span class="token string">'git'</span>
-           repo: git@github<span class="token punctuation">.</span>com:Mrmengqiushisan<span class="token operator">/</span>mrmengqiushisan<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io<span class="token punctuation">.</span>git
-          branch: main
+<p><img src="/2023/08071422.htm/08071422/92e55bf1f75e0e06e92ffe54ca751d02.png" alt="92e55bf1f75e0e06e92ffe54ca751d02"></p>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>Go语言中也支持指针操作，但并不能向C++一样运用的如此广泛，它可以用来真实的改变值本身的大小，而非发生拷贝操作后无法对初始值进行改变，即值传递和引用传递区别本身，传递本身也采用地址符号进行传递</p>
+<pre class=" language-golang"><code class="language-golang">package main
+
+import "fmt"
+
+func add2(n int) &#123;
+    n += 2
+&#125;
+
+func add2ptr(n *int) &#123;
+    *n += 2
+&#125;
+
+func main() &#123;
+    n := 5
+    add2(n)
+    fmt.Println(n) // 5
+    add2ptr(&n)
+    fmt.Println(n) // 7
+&#125;
 </code></pre>
-<h2 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h2><pre class=" language-powershell"><code class="language-powershell">hexo d	<span class="token comment" spellcheck="true">#部署到Github仓库里</span>
-https:<span class="token operator">/</span><span class="token operator">/</span>mrmengqiushisan<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io<span class="token operator">/</span>  <span class="token comment" spellcheck="true">#访问这个地址可以查看博客</span>
+<p><img src="/2023/08071422.htm/08071422/46d2bafd9e7b07ef3d13d1634aa43e85.png" alt="46d2bafd9e7b07ef3d13d1634aa43e85"></p>
+<h2 id="结构体，类"><a href="#结构体，类" class="headerlink" title="结构体，类"></a>结构体，类</h2><p>Go中的结构体同C中的结构体很像，在定义过程中，可以有几种不同的方式进行定义，相对而言比较灵活，可以指定需要定义的成员值</p>
+<p>成员函数的定义只需要在”func“后用括号表明这是谁的成员函数即可</p>
+<pre class=" language-golang"><code class="language-golang">package main
+
+import "fmt"
+
+type user struct &#123;
+    name     string
+    password string
+&#125;
+
+func (u user) checkPassWordMy(password string)bool &#123;
+    return u.password==password
+&#125;
+func (u* user) checkPassWordPoint(password string)bool&#123;
+    return u.password==password
+&#125;
+
+func main() &#123;
+    a := user&#123;name: "wang", password: "1234"&#125;
+    b := user&#123;"wang", "1234"&#125;
+    c := user&#123;name: "wang"&#125;
+    var d user
+    d.name = "wang"
+    d.password = "1234"
+
+    fmt.Println(a, b, c, d)
+    fmt.Println(checkPassWord(a, "haha"))
+    fmt.Println(checkPassWord2(&a, "haha"))
+    fmt.Println(a)
+    fmt.Println(a.checkPassWordMy("haha"))
+    fmt.Println(a.checkPassWordPoint("haha"))
+&#125;
+
+func checkPassWord(u user, password string) bool &#123;
+    return u.password == password
+&#125;
+
+func checkPassWord2(u *user, password string) bool &#123;
+    if u.password != password &#123;
+        u.password = password
+        return false
+    &#125;
+    return true
+&#125;
 </code></pre>
-<h2 id="主题更改"><a href="#主题更改" class="headerlink" title="主题更改"></a>主题更改</h2><pre class=" language-powershell"><code class="language-powershell">git clone https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>litten<span class="token operator">/</span>hexo<span class="token operator">-</span>theme<span class="token operator">-</span>yilia<span class="token punctuation">.</span>git themes<span class="token operator">/</span>yilia  <span class="token comment" spellcheck="true">#下载yilia主题到本地</span>
-<span class="token comment" spellcheck="true">#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</span>
-hexo c	<span class="token comment" spellcheck="true">#清理一下</span>
-hexo g	<span class="token comment" spellcheck="true">#生成</span>
-hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓库</span>
+<p><img src="/2023/08071422.htm/08071422/32d4aa07dd2e4f2842ff57b05253707d.png" alt="32d4aa07dd2e4f2842ff57b05253707d"></p>
+<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><p>Go语言中采error关键字来说明错误</p>
+<pre class=" language-golang"><code class="language-golang">package main
+
+import (
+    "errors"
+    "fmt"
+)
+
+type user struct &#123;
+    name     string
+    password string
+&#125;
+
+func findUser(users []user, name string) (v *user, err error) &#123;
+    for _, u := range users &#123;
+        if u.name == name &#123;
+            return &u, nil
+        &#125;
+    &#125;
+    return nil, errors.New("not found")
+&#125;
+
+func main() &#123;
+    u, err := findUser([]user&#123;&#123;"wang", "1234"&#125;&#125;, "wang")
+    if err != nil &#123;
+        fmt.Println(err)
+        return
+    &#125;
+    fmt.Println(*u)
+    if u, err := findUser([]user&#123;&#123;"wang", "324"&#125;, &#123;"xiao", "1109"&#125;&#125;, "li"); err != nil &#123;
+        fmt.Println(err)
+        return
+    &#125; else &#123;
+        fmt.Println(*u)
+    &#125;
+&#125;
 </code></pre>
-<h2 id="主题更换链接"><a href="#主题更换链接" class="headerlink" title="主题更换链接"></a>主题更换链接</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/"><code>https://hexo.io/themes/</code></a></p>
-<h2 id="基于Hexo的matery主题搭建博客并优化"><a href="#基于Hexo的matery主题搭建博客并优化" class="headerlink" title="基于Hexo的matery主题搭建博客并优化"></a>基于Hexo的matery主题搭建博客并优化</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jspnetcn/article/details/104111651"><code>https://blog.csdn.net/jspnetcn/article/details/104111651</code></a></p>
+<p><img src="/2023/08071422.htm/08071422/38c075dbb1264ec9d32b612cc8850185.png" alt="38c075dbb1264ec9d32b612cc8850185"></p>
+<h2 id="strings"><a href="#strings" class="headerlink" title="strings"></a>strings</h2><p>同C++类似，可以实现对字符串的查询，追加，拼接，分割，重复使用，等等</p>
+<pre class=" language-golang"><code class="language-golang">package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() &#123;
+    a := "hello"
+    fmt.Println(strings.Contains(a, "ll"))                // true
+    fmt.Println(strings.Count(a, "l"))                    // 2
+    fmt.Println(strings.HasPrefix(a, "he"))               // true
+    fmt.Println(strings.HasSuffix(a, "llo"))              // true
+    fmt.Println(strings.Index(a, "ll"))                   // 2
+    fmt.Println(strings.Join([]string&#123;"he", "llo"&#125;, "-")) // he-llo
+    fmt.Println(strings.Repeat(a, 2))                     // hellohello
+    fmt.Println(strings.Replace(a, "e", "E", -1))         // hEllo
+    fmt.Println(strings.Split("a-b-c", "-"))              // [a b c]
+    fmt.Println(strings.ToLower(a))                       // hello
+    fmt.Println(strings.ToUpper(a))                       // HELLO
+    fmt.Println(len(a))                                   // 5
+    b := "你好"
+    fmt.Println(len(b)) // 6
+&#125;
+</code></pre>
+<h2 id="fmt-格式化输出"><a href="#fmt-格式化输出" class="headerlink" title="fmt 格式化输出"></a>fmt 格式化输出</h2><p>同C语言的printf很像，但对于不同的数据类型，Go均可通过%v实现输出，</p>
+<p>%+v 表示详细输出</p>
+<p>%#v表示更加详细的输出，包括调用的函数</p>
+<pre class=" language-golang"><code class="language-golang">package main
+
+import "fmt"
+
+type point struct &#123;
+    x, y int
+&#125;
+
+func main() &#123;
+    s := "hello"
+    n := 123
+    p := point&#123;1, 2&#125;
+    fmt.Println(s, n) // hello 123
+    fmt.Println(p)    // &#123;1 2&#125;
+
+    fmt.Printf("s=%v\n", s)  // s=hello
+    fmt.Printf("n=%v\n", n)  // n=123
+    fmt.Printf("p=%v\n", p)  // p=&#123;1 2&#125;
+    fmt.Printf("p=%+v\n", p) // p=&#123;x:1 y:2&#125;
+    fmt.Printf("p=%#v\n", p) // p=main.point&#123;x:1, y:2&#125;
+
+    f := 3.141592653
+    fmt.Println(f)          // 3.141592653
+    fmt.Printf("%.2f\n", f) // 3.14
+&#125;
+</code></pre>
+<p><img src="/2023/08071422.htm/08071422/470f72b80bd16decf716f5e4043989bd.png" alt="470f72b80bd16decf716f5e4043989bd"></p>
+<h2 id="json相关"><a href="#json相关" class="headerlink" title="json相关"></a>json相关</h2><p>对于一个已有的结构体，保证每个字段的第一个字母为大写，那么这个结构体可以通过Json.Marshal进行序列化，序列化为一个数组的形式，需要通过通过string强制类型转换才能打印出字符串</p>
+<p>通过json.MarshalIndent可以实现json格式的buf</p>
+<pre class=" language-golang"><code class="language-golang">//参数一代表需要处理的结构体
+//参数二代表需要的前缀
+//参数三代表间隔的方式
+func MarshalIndent(v any, prefix, indent string) ([]byte, error)
+package main
+
+import (
+    "encoding/json"
+    "fmt"
+)
+
+type userInfo struct &#123;
+    Name  string
+    Age   int
+    Hobby []string
+&#125;
+
+func main() &#123;
+    a := userInfo&#123;Name: "wang", Age: 18, Hobby: []string&#123;"C++", "C#", "QT", "Go"&#125;&#125;
+    buf, err := json.Marshal(a)
+    if err != nil &#123;
+        panic(err)
+        return
+    &#125;
+    fmt.Println(buf)
+    fmt.Println(string(buf))
+
+    buf, err = json.MarshalIndent(a, "", "\t")
+    if err != nil &#123;
+        panic(err)
+        return
+    &#125;
+    fmt.Println(string(buf))
+    var b userInfo
+    err = json.Unmarshal(buf, &b)
+    if err != nil &#123;
+        panic(err)
+    &#125;
+    fmt.Printf("%#v\n", b)
+&#125;
+</code></pre>
+<p><img src="/2023/08071422.htm/08071422/12a366d9a741cdd419c7ba7ff715b61f.png" alt="12a366d9a741cdd419c7ba7ff715b61f"></p>
+<h2 id="时间相关函数"><a href="#时间相关函数" class="headerlink" title="时间相关函数"></a>时间相关函数</h2><pre class=" language-golang"><code class="language-golang">package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() &#123;
+    now := time.Now()
+    fmt.Println(now) // 2022-03-27 18:04:59.433297 +0800 CST m=+0.000087933
+    t := time.Date(2022, 3, 27, 1, 25, 36, 0, time.UTC)
+    t2 := time.Date(2022, 3, 27, 2, 30, 36, 0, time.UTC)
+    fmt.Println(t)                                                  // 2022-03-27 01:25:36 +0000 UTC
+    fmt.Println(t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute()) // 2022 March 27 1 25
+    fmt.Println(t.Format("2006-01-02 15:04:05"))                    // 2022-03-27 01:25:36
+    diff := t2.Sub(t)
+    fmt.Println(diff)                           // 1h5m0s
+    fmt.Println(diff.Minutes(), diff.Seconds()) // 65 3900
+    t3, err := time.Parse("2006-01-02 15:04:05", "2022-03-27 01:25:36")
+    if err != nil &#123;
+        panic(err)
+    &#125;
+    fmt.Println(t3)
+    fmt.Println(t3 == t)    // true
+    fmt.Println(now.Unix()) // 1648738080
+&#125;
+</code></pre>
+<p><img src="/2023/08071422.htm/08071422/28bd3eaaa9a3630c75c35b4925c4b99b.png" alt="28bd3eaaa9a3630c75c35b4925c4b99b"></p>
+<h2 id="字符串和数字之间的转换"><a href="#字符串和数字之间的转换" class="headerlink" title="字符串和数字之间的转换"></a>字符串和数字之间的转换</h2><pre class=" language-golang"><code class="language-golang">package main
+
+import (
+    "fmt"
+    "strconv"
+)
+
+func main() &#123;
+    f, _ := strconv.ParseFloat("1.234", 64)
+    fmt.Println(f) // 1.234
+
+    n, _ := strconv.ParseInt("111", 10, 64)
+    fmt.Println(n) // 111
+
+    n, _ = strconv.ParseInt("0x1000", 0, 64)
+    fmt.Println(n) // 4096
+
+    n2, _ := strconv.Atoi("123")
+    fmt.Println(n2) // 123
+
+    n2, err := strconv.Atoi("AAA")
+    fmt.Println(n2, err) // 0 strconv.Atoi: parsing "AAA": invalid syntax
+&#125;
+</code></pre>
+<p><img src="/2023/08071422.htm/08071422/3d78f856081105efd3e96d838d549a8f.png" alt="3d78f856081105efd3e96d838d549a8f"></p>
+<h2 id="Go语言的实战案例"><a href="#Go语言的实战案例" class="headerlink" title="Go语言的实战案例"></a>Go语言的实战案例</h2><h3 id="猜谜游戏"><a href="#猜谜游戏" class="headerlink" title="猜谜游戏"></a>猜谜游戏</h3><pre class=" language-golang"><code class="language-golang">package main
+
+import (
+    "bufio"
+    "fmt"
+    "math/rand"
+    "os"
+    "strconv"
+    "strings"
+    "time"
+)
+
+func main() &#123;
+    maxNum := 100
+    rand.Seed(time.Now().UnixNano())
+    secretNumber := rand.Intn(maxNum)
+    fmt.Println("The sercert number is ", secretNumber)
+    for &#123;
+        fmt.Println("Please input your guess")
+        reader := bufio.NewReader(os.Stdin)
+        input, err := reader.ReadString('\n')
+        if err != nil &#123;
+            fmt.Println("An error occured while reading input Please try again", err)
+            continue
+        &#125;
+        input = strings.Trim(input, "\r\n")
+        guess, err := strconv.Atoi(input)
+        if err != nil &#123;
+            fmt.Println("Invalid input,Please enter an integer value")
+            continue
+        &#125;
+        fmt.Println("You guess is:", guess)
+        if guess > secretNumber &#123;
+            fmt.Println("Your guess is bigger than the secret number. Please try again")
+        &#125; else if guess < secretNumber &#123;
+            fmt.Println("Your guess is smaller than the secret number. Please try again")
+        &#125; else &#123;
+            fmt.Println("Correct,you Legend!")
+            break
+        &#125;
+    &#125;
+
+&#125;
+</code></pre>
+<h3 id="查单词字典"><a href="#查单词字典" class="headerlink" title="查单词字典"></a>查单词字典</h3><pre class=" language-golang"><code class="language-golang">package main
+
+import (
+    "bytes"
+    "encoding/json"
+    "fmt"
+    "io"
+    "log"
+    "net/http"
+    "os"
+)
+
+type DictRequest struct &#123;
+    Trans_type string `json:"trans_type"`
+    Source     string `json:"source"`
+    User_ID    string `json:"user_id"`
+&#125;
+
+type DictResponse struct &#123;
+    Rc   int `json:"rc"`
+    Wiki struct &#123;
+        KnownInLaguages int `json:"known_in_laguages"`
+        Description     struct &#123;
+            Source string      `json:"source"`
+            Target interface&#123;&#125; `json:"target"`
+        &#125; `json:"description"`
+        ID   string `json:"id"`
+        Item struct &#123;
+            Source string `json:"source"`
+            Target string `json:"target"`
+        &#125; `json:"item"`
+        ImageURL  string `json:"image_url"`
+        IsSubject string `json:"is_subject"`
+        Sitelink  string `json:"sitelink"`
+    &#125; `json:"wiki"`
+    Dictionary struct &#123;
+        Prons struct &#123;
+            EnUs string `json:"en-us"`
+            En   string `json:"en"`
+        &#125; `json:"prons"`
+        Explanations []string      `json:"explanations"`
+        Synonym      []string      `json:"synonym"`
+        Antonym      []string      `json:"antonym"`
+        WqxExample   [][]string    `json:"wqx_example"`
+        Entry        string        `json:"entry"`
+        Type         string        `json:"type"`
+        Related      []interface&#123;&#125; `json:"related"`
+        Source       string        `json:"source"`
+    &#125; `json:"dictionary"`
+&#125;
+
+func query(word string) &#123;
+    client := &http.Client&#123;&#125;
+    request := DictRequest&#123;Trans_type: "en2zh", Source: word&#125; //定义一个结构体
+    buff, err := json.Marshal(request)                        //json 序列化
+    if err != nil &#123;
+        log.Fatal(err)
+    &#125;
+    var data = bytes.NewReader(buff) //转为字节
+    //创建请求
+    req, err := http.NewRequest("POST", "https://api.interpreter.caiyunai.com/v1/dict", data)
+    if err != nil &#123;
+        log.Fatal(err)
+    &#125;
+    //设置请求头
+    req.Header.Set("authority", "api.interpreter.caiyunai.com")
+    req.Header.Set("accept", "application/json, text/plain, */*")
+    req.Header.Set("accept-language", "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6")
+    req.Header.Set("app-name", "xy")
+    req.Header.Set("content-type", "application/json;charset=UTF-8")
+    req.Header.Set("device-id", "ae5399d5f4e62175b801e6e2c9dbd230")
+    req.Header.Set("origin", "https://fanyi.caiyunapp.com")
+    req.Header.Set("os-type", "web")
+    req.Header.Set("os-version", "")
+    req.Header.Set("referer", "https://fanyi.caiyunapp.com/")
+    req.Header.Set("sec-ch-ua", `"Not/A)Brand";v="99", "Microsoft Edge";v="115", "Chromium";v="115"`)
+    req.Header.Set("sec-ch-ua-mobile", "?0")
+    req.Header.Set("sec-ch-ua-platform", `"Windows"`)
+    req.Header.Set("sec-fetch-dest", "empty")
+    req.Header.Set("sec-fetch-mode", "cors")
+    req.Header.Set("sec-fetch-site", "cross-site")
+    req.Header.Set("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183")
+    req.Header.Set("x-authorization", "token:qgemv4jr1y38jyq6vhvi")
+    resp, err := client.Do(req) //发起请求
+    if err != nil &#123;
+        log.Fatal(err)
+    &#125;
+    defer resp.Body.Close()
+    //读取响应
+    bodyText, err := io.ReadAll(resp.Body)
+    if err != nil &#123;
+        log.Fatal(err)
+    &#125;
+    if resp.StatusCode != 200 &#123;
+        log.Fatal("bad StatusCode:", resp.StatusCode, "body", string(bodyText))
+    &#125;
+    //fmt.Printf("%s\n", bodyText)
+    //buff2, err := json.MarshalIndent(bodyText, "", "\t")
+    //fmt.Println(string(buff2))
+    var dictRes DictResponse
+    err = json.Unmarshal(bodyText, &dictRes)
+    if err != nil &#123;
+        log.Fatal(err)
+    &#125;
+    //fmt.Printf("%#v\n", dictRes)
+    fmt.Println(word, "UK:", dictRes.Dictionary.Prons.En, "US:", dictRes.Dictionary.Prons.EnUs)
+    for _, item := range dictRes.Dictionary.Explanations &#123;
+        fmt.Println(item)
+    &#125;
+&#125;
+
+func main() &#123;
+    if len(os.Args) != 2 &#123;
+        fmt.Fprintf(os.Stderr, `usage:simpleDict WORD 
+        example: simpleDict hello`)
+        os.Exit(1)
+    &#125;
+    word := os.Args[1]
+    query(word)
+&#125;
+</code></pre>
+<h3 id="代理服务器实现"><a href="#代理服务器实现" class="headerlink" title="代理服务器实现"></a>代理服务器实现</h3><pre class=" language-golang"><code class="language-golang">package main
+
+import (
+    "bufio"
+    "context"
+    "encoding/binary"
+    "errors"
+    "fmt"
+    "io"
+    "log"
+    "net"
+)
+
+const socks5Ver = 0x05
+const cmdBind = 0x01
+const atypeIPV4 = 0x01
+const atypeHOST = 0x03
+const atypeIPV6 = 0x04
+
+func main() &#123;
+    server, err := net.Listen("tcp", "127.0.0.1:9527")
+    if err != nil &#123;
+        log.Fatal(err)
+    &#125;
+    for &#123;
+        client, err := server.Accept()
+        if err != nil &#123;
+            log.Printf("Accept failed", err)
+        &#125;
+        go process(client)
+    &#125;
+&#125;
+
+func process(conn net.Conn) &#123;
+    defer conn.Close()
+    reader := bufio.NewReader(conn)
+    err := auth(reader, conn)
+    if err != nil &#123;
+        log.Printf("client %v auth failed:%v", conn.RemoteAddr(), err)
+        return
+    &#125;
+    err = connect(reader, conn)
+    if err != nil &#123;
+        log.Printf("client %v auth failed:%v", conn.RemoteAddr(), err)
+        return
+    &#125;
+&#125;
+
+func auth(reader *bufio.Reader, conn net.Conn) (err error) &#123;
+    // +----+----------+----------+
+    // |VER | NMETHODS | METHODS  |
+    // +----+----------+----------+
+    // | 1  |    1     | 1 to 255 |
+    // +----+----------+----------+
+    // VER: 协议版本，socks5为0x05
+    // NMETHODS: 支持认证的方法数量
+    // METHODS: 对应NMETHODS，NMETHODS的值为多少，METHODS就有多少个字节。RFC预定义了一些值的含义，内容如下:
+    // X’00’ NO AUTHENTICATION REQUIRED
+    // X’02’ USERNAME/PASSWORD
+    ver, err := reader.ReadByte()
+    if err != nil &#123;
+        return fmt.Errorf("read ver failed:%dw", err)
+    &#125;
+    if ver != socks5Ver &#123;
+        return fmt.Errorf("not supported ver:%v", ver)
+    &#125;
+    methodSize, err := reader.ReadByte()
+    if err != nil &#123;
+        return fmt.Errorf("read ver failed:%dw", err)
+    &#125;
+    method := make([]byte, methodSize)
+    _, err = io.ReadFull(reader, method)
+    if err != nil &#123;
+        return fmt.Errorf("read method failed:%w", err)
+    &#125;
+    // +----+--------+
+    // |VER | METHOD |
+    // +----+--------+
+    // | 1  |   1    |
+    // +----+--------+
+    _, err = conn.Write([]byte&#123;socks5Ver, 0x00&#125;)
+    if err != nil &#123;
+        return fmt.Errorf("write failed:%w", err)
+    &#125;
+    return nil
+&#125;
+
+func connect(reader *bufio.Reader, conn net.Conn) (err error) &#123;
+    // +----+-----+-------+------+----------+----------+
+    // |VER | CMD |  RSV  | ATYP | DST.ADDR | DST.PORT |
+    // +----+-----+-------+------+----------+----------+
+    // | 1  |  1  | X'00' |  1   | Variable |    2     |
+    // +----+-----+-------+------+----------+----------+
+    // VER 版本号，socks5的值为0x05
+    // CMD 0x01表示CONNECT请求
+    // RSV 保留字段，值为0x00
+    // ATYP 目标地址类型，DST.ADDR的数据对应这个字段的类型。
+    //   0x01表示IPv4地址，DST.ADDR为4个字节
+    //   0x03表示域名，DST.ADDR是一个可变长度的域名
+    // DST.ADDR 一个可变长度的值
+    // DST.PORT 目标端口，固定2个字节
+    buf := make([]byte, 4)
+    _, err = io.ReadFull(reader, buf)
+    if err != nil &#123;
+        return fmt.Errorf("read header failed:%w", err)
+    &#125;
+    ver, cmd, atyp := buf[0], buf[1], buf[3]
+    if ver != socks5Ver &#123;
+        return fmt.Errorf("not supported ver:%v", ver)
+    &#125;
+    if cmd != cmdBind &#123;
+        return fmt.Errorf("not supported cmd:%v", cmd)
+    &#125;
+    addr := ""
+    switch atyp &#123;
+    case atypeIPV4:
+        _, err = io.ReadFull(reader, buf)
+        if err != nil &#123;
+            return fmt.Errorf("read atyp failed:%w", err)
+        &#125;
+        addr = fmt.Sprintf("%d.%d.%d.%d", buf[0], buf[1], buf[2], buf[3])
+    case atypeHOST:
+        hostSize, err := reader.ReadByte()
+        if err != nil &#123;
+            return fmt.Errorf("read hostSize failed:%w", err)
+        &#125;
+        host := make([]byte, hostSize)
+        _, err = io.ReadFull(reader, host)
+        if err != nil &#123;
+            return fmt.Errorf("read host failed:%w", err)
+        &#125;
+        addr = string(host)
+    case atypeIPV6:
+        return errors.New("IPv6: no supported yet")
+    default:
+        return errors.New("invalid atyp")
+    &#125;
+    _, err = io.ReadFull(reader, buf[:2])
+    if err != nil &#123;
+        return fmt.Errorf("read port failed:%w", err)
+    &#125;
+    port := binary.BigEndian.Uint16(buf[:2])
+
+    dest, err := net.Dial("tcp", fmt.Sprintf("%v:%v", addr, port))
+    if err != nil &#123;
+        return fmt.Errorf("dial dst failed:%w", err)
+    &#125;
+    defer dest.Close()
+    log.Println("dial", addr, port)
+    _, err = conn.Write([]byte&#123;0x05, 0x00, 0x00, 0x01, 0, 0, 0, 0, 0, 0&#125;)
+    if err != nil &#123;
+        return fmt.Errorf("write failed: %w", err)
+    &#125;
+    ctx, cancel := context.WithCancel(context.Background())
+    defer cancel()
+
+    go func() &#123;
+        _, _ = io.Copy(dest, reader)
+        cancel()
+    &#125;()
+    go func() &#123;
+        _, _ = io.Copy(conn, dest)
+        cancel()
+    &#125;()
+
+    <-ctx.Done()
+    return nil
+&#125;
+</code></pre>
 
                 
             </div>
@@ -478,7 +1070,7 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mrmengqiushisan.github.io/2023/080644954.html">https://mrmengqiushisan.github.io/2023/080644954.html</a>
+                    <a href="https://mrmengqiushisan.github.io/2023/08071422.html">https://mrmengqiushisan.github.io/2023/08071422.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -516,8 +1108,12 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/web/">
-                                    <span class="chip bg-color">web</span>
+                                <a href="/tags/Go/">
+                                    <span class="chip bg-color">Go</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                                    <span class="chip bg-color">后端</span>
                                 </a>
                             
                         </div>
@@ -595,7 +1191,7 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
         repo: '',
         owner: '',
         admin: null,
-        id: '2023-08-06T00-58-50',
+        id: '2023-08-07T17-09-38',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -619,7 +1215,7 @@ hexo d	<span class="token comment" spellcheck="true">#部署到远程Github仓�
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sun Aug 06 2023 00:58:50 GMT+0800',
+    id: 'Mon Aug 07 2023 17:09:38 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -644,9 +1240,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://mrmengqiushisan.github.io/2023/080644954.html';
-        this.page.identifier = '/2023/080644954.html';
-        this.page.title = 'Hexo使用指南';
+        this.page.url = 'https://mrmengqiushisan.github.io/2023/08071422.html';
+        this.page.identifier = '/2023/08071422.html';
+        this.page.title = 'Go后端基础课';
     };
     let disqus_shortname = '';
 
@@ -702,13 +1298,13 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/080716572.html">
+                <a href="/2023/080736829.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="开机启动的两种方式">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="语言进阶与依赖管理">
                         
-                        <span class="card-title">开机启动的两种方式</span>
+                        <span class="card-title">语言进阶与依赖管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -721,6 +1317,43 @@ gitment.render('gitment-content');
                         <span class="publish-date">
                             <i class="far fa-clock fa-fw icon-date"></i>2023-08-07
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Tao Wang
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/080761350.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="CONTAINING_RECORD宏原理与使用详解">
+                        
+                        <span class="card-title">CONTAINING_RECORD宏原理与使用详解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -744,43 +1377,14 @@ gitment.render('gitment-content');
                         <span class="chip bg-color">MFC</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/080516107.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Tao Wang
-                            
-                        </span>
-                    </div>
+                    <a href="/tags/CONTAINING-RECORD/">
+                        <span class="chip bg-color">CONTAINING_RECORD</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/">
+                        <span class="chip bg-color">对象模型</span>
+                    </a>
+                    
                 </div>
                 
             </div>
