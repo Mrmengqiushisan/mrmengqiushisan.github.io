@@ -6,7 +6,7 @@
   <link href="https://mrmengqiushisan.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrmengqiushisan.github.io/"/>
-  <updated>2023-08-07T15:21:13.768Z</updated>
+  <updated>2023-08-08T05:37:41.289Z</updated>
   <id>https://mrmengqiushisan.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Qt带参的槽函数传递</title>
+    <link href="https://mrmengqiushisan.github.io/2023/08087724.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/08087724.html</id>
+    <published>2023-08-08T05:20:45.000Z</published>
+    <updated>2023-08-08T05:37:41.289Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;使用QSignalMapper实现无参信号到有参信号的传递&quot;&gt;&lt;a href=&quot;#使用QSignalMapper实现无参信号到有参信号的传递&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Qt" scheme="https://mrmengqiushisan.github.io/categories/Qt/"/>
+    
+    
+    <category term="信号与槽函数" scheme="https://mrmengqiushisan.github.io/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%A7%BD%E5%87%BD%E6%95%B0/"/>
+    
+    <category term="QSignalMapper" scheme="https://mrmengqiushisan.github.io/tags/QSignalMapper/"/>
+    
+  </entry>
   
   <entry>
     <title>高质量编程及编程规范</title>
