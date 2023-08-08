@@ -421,7 +421,7 @@
 <p>该类收集一组无参的signal，然后以<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%B4%E5%9E%8B&spm=1001.2101.3001.7020">整型</a>数、或字符串、或widget参数为参数重新将这些signal再次发送出去，而这里的整型数、字符串和widget参数就是原本发送该signal对象的标识信息。</p>
 <p>QSignalMapper支持将特定的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%AD%97%E7%AC%A6%E4%B8%B2&spm=1001.2101.3001.7020">字符串</a>或整型数对应到特定的对象上，这是通过setMapping()做到的。该特定对象的signal可以被连接到QSignalMapper的map() slot，而map()会发射mapped() signal，注意这里的mapped() signal是带参数的，而参数类型就是原本发送最初signal的特定对象的标识信息，即整型数或字符串等。使用removeMappings()可以删除对应关系。</p>
 <p>改类支持四种在参数的传递，在实际使用中，我们更喜欢通过QObject来传递参数，因为这样相当于可以自定义新的数据类型，实现都数据的封装，从而实现对槽函数大量参数的传递</p>
-<p><img src="/2023/0808undefined/image-20230808132808679.png" alt="image-20230808132808679"></p>
+<p><img src="/2023/08087724/image-20230808132808679.png" alt="image-20230808132808679"></p>
 <h3 id="定义自定义类型数据TestInt，用于传递新类型的数据"><a href="#定义自定义类型数据TestInt，用于传递新类型的数据" class="headerlink" title="定义自定义类型数据TestInt，用于传递新类型的数据"></a>定义自定义类型数据TestInt，用于传递新类型的数据</h3><pre class=" language-c++"><code class="language-c++">#ifndef TESTINT_H
 #define TESTINT_H
 #include <QObject>
@@ -533,7 +533,7 @@ void Widget::myslots(QObject* edit)
     &#125;
 &#125;
 </code></pre>
-<p><img src="/2023/0808undefined/image-20230808133624417.png" alt="image-20230808133624417"></p>
+<p><img src="/2023/08087724/image-20230808133624417.png" alt="image-20230808133624417"></p>
 <p>通过点击随意一个按钮，实现数据的传递。</p>
 
                 
