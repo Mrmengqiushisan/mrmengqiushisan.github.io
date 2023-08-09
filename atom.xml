@@ -6,7 +6,7 @@
   <link href="https://mrmengqiushisan.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrmengqiushisan.github.io/"/>
-  <updated>2023-08-09T08:33:09.717Z</updated>
+  <updated>2023-08-09T14:29:21.516Z</updated>
   <id>https://mrmengqiushisan.github.io/</id>
   
   <author>
@@ -17,11 +17,66 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>内存与存储系统</title>
+    <link href="https://mrmengqiushisan.github.io/2023/080926390.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/080926390.html</id>
+    <published>2023-08-09T11:50:44.000Z</published>
+    <updated>2023-08-09T14:29:21.516Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什么是存储系统&quot;&gt;&lt;a href=&quot;#什么是存储系统&quot; class=&quot;headerlink&quot; title=&quot;什么是存储系统&quot;&gt;&lt;/a&gt;什么是存储系统&lt;/h2&gt;&lt;p&gt;一个提供了读写、控制类接口、能够安全有效地把数据持久化的软件，就可以称为存储系统&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://mrmengqiushisan.github.io/categories/MySQL/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+    <category term="存储系统" scheme="https://mrmengqiushisan.github.io/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GORM框架</title>
+    <link href="https://mrmengqiushisan.github.io/2023/080927216.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/080927216.html</id>
+    <published>2023-08-09T08:43:24.000Z</published>
+    <updated>2023-08-09T14:29:21.513Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;GORM概述&quot;&gt;&lt;a href=&quot;#GORM概述&quot; class=&quot;headerlink&quot; title=&quot;GORM概述&quot;&gt;&lt;/a&gt;GORM概述&lt;/h2&gt;&lt;p&gt;GORM 是基于 Go 语言的一个自动化的 ORM（Object Relational Mapping）</summary>
+        
+      
+    
+    
+    
+    <category term="GORM" scheme="https://mrmengqiushisan.github.io/categories/GORM/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+    <category term="MySQL" scheme="https://mrmengqiushisan.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Go语言操作MySQL</title>
     <link href="https://mrmengqiushisan.github.io/2023/080928006.html"/>
     <id>https://mrmengqiushisan.github.io/2023/080928006.html</id>
     <published>2023-08-09T03:03:12.000Z</published>
-    <updated>2023-08-09T08:33:09.717Z</updated>
+    <updated>2023-08-09T08:52:15.063Z</updated>
     
     
       
