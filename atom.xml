@@ -6,7 +6,7 @@
   <link href="https://mrmengqiushisan.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrmengqiushisan.github.io/"/>
-  <updated>2023-08-08T05:37:59.147Z</updated>
+  <updated>2023-08-09T08:33:09.717Z</updated>
   <id>https://mrmengqiushisan.github.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Go语言操作MySQL</title>
+    <link href="https://mrmengqiushisan.github.io/2023/080928006.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/080928006.html</id>
+    <published>2023-08-09T03:03:12.000Z</published>
+    <updated>2023-08-09T08:33:09.717Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Go语言操作MySQL&lt;/p&gt;
+&lt;p&gt;Go语言中的&lt;code&gt;database/sql&lt;/code&gt;不包含数据库驱动，&lt;code&gt;database/sql&lt;/code&gt;提供了保证SQL或类SQL数据库的泛用接口。使用sql包时必须注入（至少）一个数据库驱动。 参见&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://mrmengqiushisan.github.io/categories/MySQL/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+    <category term="MySQL" scheme="https://mrmengqiushisan.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RPC框架分层设计</title>
+    <link href="https://mrmengqiushisan.github.io/2023/080864291.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/080864291.html</id>
+    <published>2023-08-08T08:30:46.000Z</published>
+    <updated>2023-08-09T08:37:25.528Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;远程函数调用-RPC-remote-procedure-calls&quot;&gt;&lt;a href=&quot;#远程函数调用-RPC-remote-procedure-calls&quot; class=&quot;headerlink&quot; title=&quot;远程函数调用(RPC - remote</summary>
+        
+      
+    
+    
+    
+    <category term="RPC" scheme="https://mrmengqiushisan.github.io/categories/RPC/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+    <category term="框架设计" scheme="https://mrmengqiushisan.github.io/tags/%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>Qt带参的槽函数传递</title>
