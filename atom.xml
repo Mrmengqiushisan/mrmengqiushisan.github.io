@@ -6,7 +6,7 @@
   <link href="https://mrmengqiushisan.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrmengqiushisan.github.io/"/>
-  <updated>2023-08-10T06:55:09.967Z</updated>
+  <updated>2023-08-13T14:22:21.467Z</updated>
   <id>https://mrmengqiushisan.github.io/</id>
   
   <author>
@@ -17,11 +17,192 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>UDP穿透的原理</title>
+    <link href="https://mrmengqiushisan.github.io/2023/081337957.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/081337957.html</id>
+    <published>2023-08-13T07:20:52.000Z</published>
+    <updated>2023-08-13T14:22:21.467Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;网络通信原理&quot;&gt;&lt;a href=&quot;#网络通信原理&quot; class=&quot;headerlink&quot; title=&quot;网络通信原理&quot;&gt;&lt;/a&gt;网络通信原理&lt;/h2&gt;&lt;h3 id=&quot;问题提出&quot;&gt;&lt;a href=&quot;#问题提出&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络编程" scheme="https://mrmengqiushisan.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
+    
+    <category term="UDP" scheme="https://mrmengqiushisan.github.io/tags/UDP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于IOCP的服务器开发</title>
+    <link href="https://mrmengqiushisan.github.io/2023/08123684.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/08123684.html</id>
+    <published>2023-08-12T03:59:01.000Z</published>
+    <updated>2023-08-13T07:17:15.992Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;f&lt;/p&gt;
+&lt;h2 id=&quot;枚举类型定义以及相关类的提前声明&quot;&gt;&lt;a href=&quot;#枚举类型定义以及相关类的提前声明&quot; class=&quot;headerlink&quot; title=&quot;枚举类型定义以及相关类的提前声明&quot;&gt;&lt;/a&gt;枚举类型定义以及相关类的提前声明&lt;/h2&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="网络编程" scheme="https://mrmengqiushisan.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
+    
+    <category term="IOCP" scheme="https://mrmengqiushisan.github.io/tags/IOCP/"/>
+    
+    <category term="SOCKET编程" scheme="https://mrmengqiushisan.github.io/tags/SOCKET%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="线程池" scheme="https://mrmengqiushisan.github.io/tags/%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
+    
+    <category term="队列" scheme="https://mrmengqiushisan.github.io/tags/%E9%98%9F%E5%88%97/"/>
+    
+    <category term="Overlapped重叠结构的使用" scheme="https://mrmengqiushisan.github.io/tags/Overlapped%E9%87%8D%E5%8F%A0%E7%BB%93%E6%9E%84%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gin框架学习</title>
+    <link href="https://mrmengqiushisan.github.io/2023/081132645.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/081132645.html</id>
+    <published>2023-08-11T08:14:56.000Z</published>
+    <updated>2023-08-11T14:16:32.954Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装Gin&quot;&gt;&lt;a href=&quot;#安装Gin&quot; class=&quot;headerlink&quot; title=&quot;安装Gin&quot;&gt;&lt;/a&gt;安装Gin&lt;/h2&gt;&lt;pre class=&quot; language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Gin" scheme="https://mrmengqiushisan.github.io/categories/Gin/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+    <category term="Gin" scheme="https://mrmengqiushisan.github.io/tags/Gin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线程和线程池</title>
+    <link href="https://mrmengqiushisan.github.io/2023/081029011.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/081029011.html</id>
+    <published>2023-08-10T14:00:01.000Z</published>
+    <updated>2023-08-11T02:29:45.919Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;线程类&quot;&gt;&lt;a href=&quot;#线程类&quot; class=&quot;headerlink&quot; title=&quot;线程类&quot;&gt;&lt;/a&gt;线程类&lt;/h2&gt;&lt;pre class=&quot; language-C++&quot;&gt;&lt;code class=&quot;language-C++&quot;&gt;class</summary>
+        
+      
+    
+    
+    
+    <category term="网络编程" scheme="https://mrmengqiushisan.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
+    
+    <category term="thread" scheme="https://mrmengqiushisan.github.io/tags/thread/"/>
+    
+    <category term="线程池" scheme="https://mrmengqiushisan.github.io/tags/%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IOCP网络编程和重叠结构的使用</title>
+    <link href="https://mrmengqiushisan.github.io/2023/081040534.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/081040534.html</id>
+    <published>2023-08-10T13:12:56.000Z</published>
+    <updated>2023-08-11T02:29:45.917Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;SOCKET与IOCP的结合&quot;&gt;&lt;a href=&quot;#SOCKET与IOCP的结合&quot; class=&quot;headerlink&quot; title=&quot;SOCKET与IOCP的结合&quot;&gt;&lt;/a&gt;SOCKET与IOCP的结合&lt;/h2&gt;&lt;pre class=&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络编程" scheme="https://mrmengqiushisan.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
+    
+    <category term="IOCP" scheme="https://mrmengqiushisan.github.io/tags/IOCP/"/>
+    
+    <category term="Overlapped" scheme="https://mrmengqiushisan.github.io/tags/Overlapped/"/>
+    
+    <category term="并发编程" scheme="https://mrmengqiushisan.github.io/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线程安全的队列</title>
+    <link href="https://mrmengqiushisan.github.io/2023/081023928.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/081023928.html</id>
+    <published>2023-08-10T12:16:04.000Z</published>
+    <updated>2023-08-11T02:29:45.921Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;设计方式&quot;&gt;&lt;a href=&quot;#设计方式&quot; class=&quot;headerlink&quot; title=&quot;设计方式&quot;&gt;&lt;/a&gt;设计方式&lt;/h2&gt;&lt;pre class=&quot; language-c++&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="网络编程" scheme="https://mrmengqiushisan.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
+    
+    <category term="thread" scheme="https://mrmengqiushisan.github.io/tags/thread/"/>
+    
+    <category term="IOCP" scheme="https://mrmengqiushisan.github.io/tags/IOCP/"/>
+    
+    <category term="队列" scheme="https://mrmengqiushisan.github.io/tags/%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Go语言操作Redis</title>
     <link href="https://mrmengqiushisan.github.io/2023/08098470.html"/>
     <id>https://mrmengqiushisan.github.io/2023/08098470.html</id>
     <published>2023-08-09T15:05:03.000Z</published>
-    <updated>2023-08-10T06:55:09.967Z</updated>
+    <updated>2023-08-10T06:56:18.004Z</updated>
     
     
       
@@ -77,7 +258,7 @@
     <link href="https://mrmengqiushisan.github.io/2023/080927216.html"/>
     <id>https://mrmengqiushisan.github.io/2023/080927216.html</id>
     <published>2023-08-09T08:43:24.000Z</published>
-    <updated>2023-08-09T14:29:21.513Z</updated>
+    <updated>2023-08-11T04:45:21.687Z</updated>
     
     
       
@@ -213,7 +394,7 @@
     <link href="https://mrmengqiushisan.github.io/2023/080735944.html"/>
     <id>https://mrmengqiushisan.github.io/2023/080735944.html</id>
     <published>2023-08-07T14:34:19.000Z</published>
-    <updated>2023-08-08T06:42:06.915Z</updated>
+    <updated>2023-08-14T07:24:10.323Z</updated>
     
     
       
@@ -403,79 +584,6 @@
     <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
     
     <category term="hToken" scheme="https://mrmengqiushisan.github.io/tags/hToken/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开机启动的两种方式</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080716572.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080716572.html</id>
-    <published>2023-08-07T06:58:11.000Z</published>
-    <updated>2023-08-07T07:11:35.379Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-使用注册表&quot;&gt;&lt;a href=&quot;#1-使用注册表&quot; class=&quot;headerlink&quot; title=&quot;1 使用注册表&quot;&gt;&lt;/a&gt;1 使用注册表&lt;/h2&gt;&lt;pre class=&quot; language-C++&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="网络编程" scheme="https://mrmengqiushisan.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
-    
-    <category term="MFC" scheme="https://mrmengqiushisan.github.io/tags/MFC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo使用指南</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080644954.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080644954.html</id>
-    <published>2023-08-05T16:58:50.000Z</published>
-    <updated>2023-08-07T14:20:38.509Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;首先需要安装Nodejs&quot;&gt;&lt;a href=&quot;#首先需要安装Nodejs&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="博客教程" scheme="https://mrmengqiushisan.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="web" scheme="https://mrmengqiushisan.github.io/tags/web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080516107.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080516107.html</id>
-    <published>2023-08-05T15:51:48.291Z</published>
-    <updated>2023-08-06T05:38:47.887Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
