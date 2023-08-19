@@ -6,7 +6,7 @@
   <link href="https://mrmengqiushisan.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrmengqiushisan.github.io/"/>
-  <updated>2023-08-13T14:22:21.467Z</updated>
+  <updated>2023-08-19T09:19:36.467Z</updated>
   <id>https://mrmengqiushisan.github.io/</id>
   
   <author>
@@ -17,11 +17,89 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Go消息队列</title>
+    <link href="https://mrmengqiushisan.github.io/2023/081964717.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/081964717.html</id>
+    <published>2023-08-19T09:19:36.000Z</published>
+    <updated>2023-08-19T09:19:36.467Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C++并发编程</title>
+    <link href="https://mrmengqiushisan.github.io/2023/081715494.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/081715494.html</id>
+    <published>2023-08-17T12:36:03.000Z</published>
+    <updated>2023-08-17T12:36:03.647Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>对象存储</title>
+    <link href="https://mrmengqiushisan.github.io/2023/081652827.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/081652827.html</id>
+    <published>2023-08-16T07:51:03.000Z</published>
+    <updated>2023-08-16T14:14:49.109Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;短视频结构初探&quot;&gt;&lt;a href=&quot;#短视频结构初探&quot; class=&quot;headerlink&quot; title=&quot;短视频结构初探&quot;&gt;&lt;/a&gt;短视频结构初探&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="对象存储" scheme="https://mrmengqiushisan.github.io/categories/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis系统化学习</title>
+    <link href="https://mrmengqiushisan.github.io/2023/0815770.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/0815770.html</id>
+    <published>2023-08-15T10:53:46.000Z</published>
+    <updated>2023-08-19T08:57:00.817Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;为什么需要Redis&quot;&gt;&lt;a href=&quot;#为什么需要Redis&quot; class=&quot;headerlink&quot; title=&quot;为什么需要Redis&quot;&gt;&lt;/a&gt;为什么需要Redis&lt;/h2&gt;&lt;img src=&quot;image-20230815185729828.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据库" scheme="https://mrmengqiushisan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+    <category term="Redis" scheme="https://mrmengqiushisan.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>UDP穿透的原理</title>
     <link href="https://mrmengqiushisan.github.io/2023/081337957.html"/>
     <id>https://mrmengqiushisan.github.io/2023/081337957.html</id>
     <published>2023-08-13T07:20:52.000Z</published>
-    <updated>2023-08-13T14:22:21.467Z</updated>
+    <updated>2023-08-15T10:28:03.648Z</updated>
     
     
       
@@ -48,7 +126,7 @@
     <link href="https://mrmengqiushisan.github.io/2023/08123684.html"/>
     <id>https://mrmengqiushisan.github.io/2023/08123684.html</id>
     <published>2023-08-12T03:59:01.000Z</published>
-    <updated>2023-08-13T07:17:15.992Z</updated>
+    <updated>2023-08-15T10:28:03.650Z</updated>
     
     
       
@@ -84,7 +162,7 @@
     <link href="https://mrmengqiushisan.github.io/2023/081132645.html"/>
     <id>https://mrmengqiushisan.github.io/2023/081132645.html</id>
     <published>2023-08-11T08:14:56.000Z</published>
-    <updated>2023-08-11T14:16:32.954Z</updated>
+    <updated>2023-08-15T10:28:03.645Z</updated>
     
     
       
@@ -100,9 +178,9 @@
     <category term="Gin" scheme="https://mrmengqiushisan.github.io/categories/Gin/"/>
     
     
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
-    
     <category term="Gin" scheme="https://mrmengqiushisan.github.io/tags/Gin/"/>
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
     
   </entry>
   
@@ -468,122 +546,6 @@
     <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
     
     <category term="后端" scheme="https://mrmengqiushisan.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CONTAINING_RECORD宏原理与使用详解</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080761350.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080761350.html</id>
-    <published>2023-08-07T07:30:38.000Z</published>
-    <updated>2023-08-07T14:53:26.357Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;一、0指针的妙用&quot;&gt;&lt;a href=&quot;#一、0指针的妙用&quot; class=&quot;headerlink&quot; title=&quot;一、0指针的妙用&quot;&gt;&lt;/a&gt;一、0指针的妙用&lt;/h2&gt;&lt;pre class=&quot; language-C++&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="网络编程" scheme="https://mrmengqiushisan.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
-    
-    <category term="MFC" scheme="https://mrmengqiushisan.github.io/tags/MFC/"/>
-    
-    <category term="CONTAINING_RECORD" scheme="https://mrmengqiushisan.github.io/tags/CONTAINING-RECORD/"/>
-    
-    <category term="对象模型" scheme="https://mrmengqiushisan.github.io/tags/%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IOCP工作原理</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080756526.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080756526.html</id>
-    <published>2023-08-07T07:27:01.000Z</published>
-    <updated>2023-08-07T14:54:05.190Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;IOCP基本原理&quot;&gt;&lt;a href=&quot;#IOCP基本原理&quot; class=&quot;headerlink&quot; title=&quot;IOCP基本原理&quot;&gt;&lt;/a&gt;IOCP基本原理&lt;/h2&gt;&lt;p&gt;IOCP 的基本原理是通过事件驱动的方式来处理 I&amp;#x2F;O 请求，以避免传统的阻塞式</summary>
-        
-      
-    
-    
-    
-    <category term="高并发编程" scheme="https://mrmengqiushisan.github.io/categories/%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
-    
-    <category term="thread" scheme="https://mrmengqiushisan.github.io/tags/thread/"/>
-    
-    <category term="IOCP" scheme="https://mrmengqiushisan.github.io/tags/IOCP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>atomic操作</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080737660.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080737660.html</id>
-    <published>2023-08-07T07:19:31.000Z</published>
-    <updated>2023-08-07T07:38:18.722Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="多线程" scheme="https://mrmengqiushisan.github.io/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-    
-    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
-    
-    <category term="thread" scheme="https://mrmengqiushisan.github.io/tags/thread/"/>
-    
-    <category term="atomic" scheme="https://mrmengqiushisan.github.io/tags/atomic/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>管理权限的检查以及获得</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080730182.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080730182.html</id>
-    <published>2023-08-07T07:14:02.000Z</published>
-    <updated>2023-08-07T09:53:24.371Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;错误查询并在Debug栏进行显示&quot;&gt;&lt;a href=&quot;#错误查询并在Debug栏进行显示&quot; class=&quot;headerlink&quot; title=&quot;错误查询并在Debug栏进行显示&quot;&gt;&lt;/a&gt;错误查询并在Debug栏进行显示&lt;/h2&gt;&lt;pre class=&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="网络编程" scheme="https://mrmengqiushisan.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
-    
-    <category term="hToken" scheme="https://mrmengqiushisan.github.io/tags/hToken/"/>
     
   </entry>
   
