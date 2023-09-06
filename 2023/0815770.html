@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Redis系统化学习, 孟秋十三">
     <meta name="description" content="为什么需要Redis
-
 Redis基本工作原理
 数据从内存中读写
 数据保存到硬盘上防止重启数据丢失
@@ -18,10 +17,8 @@ Redis基本工作原理
 ​	 3.  单线程处理所有操作命令
 
 
-
-
 Redis客户端常用命令字符串命令
-">
+set">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -432,8 +429,7 @@ Redis客户端常用命令字符串命令
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="为什么需要Redis"><a href="#为什么需要Redis" class="headerlink" title="为什么需要Redis"></a>为什么需要Redis</h2><img src="image-20230815185729828.png" alt="image-20230815185729828" style="zoom: 67%;" />
-
+                <h2 id="为什么需要Redis"><a href="#为什么需要Redis" class="headerlink" title="为什么需要Redis"></a>为什么需要Redis</h2><p><img src="/2023/0815770/image-20230819200657466.png" alt="image-20230819200657466"></p>
 <h2 id="Redis基本工作原理"><a href="#Redis基本工作原理" class="headerlink" title="Redis基本工作原理"></a>Redis基本工作原理</h2><ol>
 <li>数据从内存中读写</li>
 <li>数据保存到硬盘上防止重启数据丢失<ul>
@@ -443,47 +439,44 @@ Redis客户端常用命令字符串命令
 </li>
 </ol>
 <p>​	 3.  单线程处理所有操作命令</p>
-<img src="image-20230815190104479.png" alt="image-20230815190104479" style="zoom:67%;" />
-
-<img src="image-20230815191601889.png" alt="image-20230815191601889" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819200714058.png" alt="image-20230819200714058"></p>
+<p><img src="/2023/0815770/image-20230819200725535.png" alt="image-20230819200725535"></p>
 <h2 id="Redis客户端常用命令"><a href="#Redis客户端常用命令" class="headerlink" title="Redis客户端常用命令"></a>Redis客户端常用命令</h2><h3 id="字符串命令"><a href="#字符串命令" class="headerlink" title="字符串命令"></a>字符串命令</h3><ul>
 <li>set 设置存储在给定键中的值</li>
 <li>get 获取存储在给定键中的值</li>
 <li>del 删除存储在给定键中的值（这个命令可以用于所有类型）</li>
 </ul>
-<p><img src="/2023/0815undefined/image-20230817163354468.png" alt="image-20230817163354468"></p>
+<p><img src="/2023/0815770/image-20230817163354468.png" alt="image-20230817163354468"></p>
 <h3 id="列表命令"><a href="#列表命令" class="headerlink" title="列表命令"></a>列表命令</h3><ul>
 <li>rpush 将给定值推入列表的右端</li>
 <li>lrange 获取列表在给定范围上的所有值</li>
 <li>lindex 获取列表在给定位置上的单个元素</li>
 <li>lpop   从列表的左端弹出一个值，并返回被弹出的值</li>
 </ul>
-<p><img src="/2023/0815undefined/image-20230817164217438.png" alt="image-20230817164217438"></p>
+<p><img src="/2023/0815770/image-20230817164217438.png" alt="image-20230817164217438"></p>
 <h3 id="集合命令"><a href="#集合命令" class="headerlink" title="集合命令"></a>集合命令</h3><ul>
 <li>sadd 将元素添加到集合中</li>
 <li>srem 从集合中移除元素</li>
 <li>sismember 快速的检查一个元素是否已存在与集合中</li>
 <li>smembers 获取集合中包含的所有元素</li>
 </ul>
-<p><img src="/2023/0815undefined/image-20230817165435533.png" alt="image-20230817165435533"></p>
+<p><img src="/2023/0815770/image-20230817165435533.png" alt="image-20230817165435533"></p>
 <h3 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h3><ul>
 <li>hset 在散列里面关联给定的键值对</li>
 <li>hget 获取指定散列键的值</li>
 <li>hgetall 获取散列包含的所有键值对</li>
 <li>hdel 如果给定键存在与散列里面，那么移除这个键</li>
 </ul>
-<p><img src="/2023/0815undefined/image-20230817170147781.png" alt="image-20230817170147781"></p>
+<p><img src="/2023/0815770/image-20230817170147781.png" alt="image-20230817170147781"></p>
 <h3 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h3><ul>
 <li>zadd 将一个带有给定分值的成员添加到有序集合里面</li>
 <li>zrange 根据元素在有序排列中所处的位置，从有序集合里面获取多个元素</li>
 <li>zrangebyscore 获取有序集合中在给定分值范围内的所有元素</li>
 <li>zrem 如果给定成员存在与有序集合，那么移除这个项目</li>
 </ul>
-<p><img src="/2023/0815undefined/image-20230817170933216.png" alt="image-20230817170933216"></p>
+<p><img src="/2023/0815770/image-20230817170933216.png" alt="image-20230817170933216"></p>
 <h2 id="Redis应用案例"><a href="#Redis应用案例" class="headerlink" title="Redis应用案例"></a>Redis应用案例</h2><h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><p>首先需要确保系统内下载了Redis服务端，官网提供了Windows和Linux的下载方式，因为本人电脑使用的是Window，所以下载了Window版的，开启Redis-server后，通过后台我们需要确保Redis服务已开启，如下图：</p>
-<img src="image-20230815195638279.png" alt="image-20230815195638279" style="zoom:80%;" />
-
+<p><img src="/2023/0815770/image-20230819201230232.png" alt="image-20230819201230232"></p>
 <h3 id="搭建Go环境Redis客户端"><a href="#搭建Go环境Redis客户端" class="headerlink" title="搭建Go环境Redis客户端"></a>搭建Go环境Redis客户端</h3><p>通过<code>go get -u github.com/go-redis/redis</code>可以下载Go开发依赖包</p>
 <p>go-redis包自带了连接池，会自动维护redis连接，因此创建一次client即可，不要查询一次redis就关闭client</p>
 <h3 id="Redis连接测试"><a href="#Redis连接测试" class="headerlink" title="Redis连接测试"></a>Redis连接测试</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> example
@@ -508,8 +501,7 @@ Redis客户端常用命令字符串命令
 <li>value:252</li>
 <li>expireAt:后天的0点</li>
 </ul>
-<h4 id="用到的数据结构：string"><a href="#用到的数据结构：string" class="headerlink" title="用到的数据结构：string"></a>用到的数据结构：string</h4><img src="image-20230815192900519.png" alt="image-20230815192900519" style="zoom:67%;" />
-
+<h4 id="用到的数据结构：string"><a href="#用到的数据结构：string" class="headerlink" title="用到的数据结构：string"></a>用到的数据结构：string</h4><p><img src="/2023/0815770/image-20230819201238281.png" alt="image-20230819201238281"></p>
 <p>这个例子主要用到是最简单的redis存储方式，即可以直接给与对应的key值既可，可以通过incr函数进行自增，程序复现代码以及运行结果如下：</p>
 <pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> example
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
@@ -568,10 +560,9 @@ Redis客户端常用命令字符串命令
     <span class="token keyword">return</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span>y<span class="token punctuation">,</span> m<span class="token punctuation">,</span> d<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/2023/0815undefined/image-20230817211539350.png" alt="image-20230817211539350"></p>
+<p><img src="/2023/0815770/image-20230817211539350.png" alt="image-20230817211539350"></p>
 <h3 id="消息通知"><a href="#消息通知" class="headerlink" title="消息通知"></a>消息通知</h3><p>用list作为消息队列，使用场景：消息通知。例如当文章更新时，将更新后的文章推送到S,用户就能搜索到最新的文章数据</p>
-<img src="image-20230815214913111.png" alt="image-20230815214913111" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819200831923.png" alt="image-20230819200831923"></p>
 <p>这一部分的实现需要我们去监听我们想看的列表，所以需要去构建并发线程的思想，为了更好的去查看协程的执行情况，我们应该定义一个日志搜集器，来监听协程执行过程中信息，对于这个搜集器的定义，主要有以下几个需要注意的点：</p>
 <ul>
 <li>在总体设计上，我们只对外使用一个ConcurrentEventLogger结构，该结构中会存储一个类型为 EventLog的切片</li>
@@ -713,15 +704,12 @@ Redis客户端常用命令字符串命令
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/2023/0815undefined/image-20230818112240276.png" alt="image-20230818112240276"></p>
+<p><img src="/2023/0815770/image-20230818112240276.png" alt="image-20230818112240276"></p>
 <h4 id="List数据结构QuickList"><a href="#List数据结构QuickList" class="headerlink" title="List数据结构QuickList"></a>List数据结构QuickList</h4><p>QuickList由一个双向链表和listpack实现</p>
-<img src="image-20230815215014172.png" alt="image-20230815215014172" style="zoom:67%;" />
-
-<img src="image-20230815215041805.png" alt="image-20230815215041805" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819200858760.png" alt="image-20230819200858760"></p>
+<p><img src="/2023/0815770/image-20230819200904852.png" alt="image-20230819200904852"></p>
 <h3 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h3><p>一个用户有多项计数需求，可通过hash结构存储</p>
-<img src="image-20230815215142910.png" alt="image-20230815215142910" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819200911054.png" alt="image-20230819200911054"></p>
 <p>这个案例主要是针对Redis中哈希表的练习，给结构体主要通过一个key键值，存储value值，这个value一般都是通过map进行存储，先看一下函数主体的实现：</p>
 <pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">Ex03</span><span class="token punctuation">(</span>ctx context<span class="token punctuation">.</span>Context<span class="token punctuation">,</span> args <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
@@ -860,8 +848,7 @@ Redis客户端常用命令字符串命令
 <li>rehash:rehash操作是将ht[O]中的数据全部迁移到ht[1]中。数据量小的场景下直接将数据从ht[o]拷贝到ht[1]速度是较快的。数据量大的场景，例如存有上百万的KV时，迁移过程将会明显阻塞用户请求</li>
 <li>渐进式rehash:为避免出现这种情况，使用了rehash方案。基本原理就是，每次用户访问时都会迁移少量数据。将整个迁移过程，平摊到所有的访问用不请求过程中</li>
 </ul>
-<img src="image-20230815215318526.png" alt="image-20230815215318526" style="zoom:67%;" />
-
+<p><img src="/image-20230819200938054.png" alt="image-20230819200938054"></p>
 <h3 id="排行榜"><a href="#排行榜" class="headerlink" title="排行榜"></a>排行榜</h3><p>积分变化时，排名要实时变更</p>
 <p>结合dict后，可实现通过key操作跳表的功能</p>
 <p>这一部分主要是针对有序集合的一个练习，改结构体中主要需要两个参数一个就是成员名，另一个为分数，形如这样：</p>
@@ -906,13 +893,10 @@ Redis客户端常用命令字符串命令
 </code></pre>
 <p>如果想查看单个用户的排名或者分数可以通过<code>ZRevRank ZScore</code>实现，这两个接口会返回需要的排名或者对应的分数</p>
 <p>如果想更改单个用户的分数，可以通过<code>ZIncrBy</code>接口更改数据</p>
-<h4 id="zset数据结构zskiplist"><a href="#zset数据结构zskiplist" class="headerlink" title="zset数据结构zskiplist"></a>zset数据结构zskiplist</h4><img src="image-20230815215502024.png" alt="image-20230815215502024" style="zoom:67%;" />
-
-<img src="image-20230815215519817.png" alt="image-20230815215519817" style="zoom:67%;" />
-
+<h4 id="zset数据结构zskiplist"><a href="#zset数据结构zskiplist" class="headerlink" title="zset数据结构zskiplist"></a>zset数据结构zskiplist</h4><p><img src="/2023/0815770/image-20230819200946653.png" alt="image-20230819200946653"></p>
+<p><img src="/2023/0815770/image-20230819200950653.png" alt="image-20230819200950653"></p>
 <h3 id="限流"><a href="#限流" class="headerlink" title="限流"></a>限流</h3><p>要求1秒内放行的请求为N，超过N则禁止访问</p>
-<img src="image-20230815215952516.png" alt="image-20230815215952516" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819200954997.png" alt="image-20230819200954997"></p>
 <p>这部分的实现需要用到并发协程的设计思想，但我们已经在之前设计好了，所以只需要设计真正的执行函数即可，这里我们的函数主体为<code>ex05work</code>在这个函数的实现相对简单，首先根据传时间创建唯一的key将改key放入redis中，它会返回当前key对应的值，因为我们可以同时启动很多的协程在同一秒内，对一个key的访问可能会很高，通过其看会的值是否大于10即可首先对应的协程是否被限流，其函数主体如下：</p>
 <pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">ex05work</span><span class="token punctuation">(</span>ctx context<span class="token punctuation">.</span>Context<span class="token punctuation">,</span> cParams common<span class="token punctuation">.</span>CInstParams<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     routeKey <span class="token operator">:=</span> cParams<span class="token punctuation">.</span>Routine
@@ -960,14 +944,13 @@ Redis客户端常用命令字符串命令
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"放行总数：%d\n"</span><span class="token punctuation">,</span> accessQueryNum<span class="token punctuation">)</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/2023/0815undefined/image-20230819161610349.png" alt="image-20230819161610349"></p>
+<p><img src="/2023/0815770/image-20230819161610349.png" alt="image-20230819161610349"></p>
 <h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><p>并发场景，要求一次只能有一个协程执行，执行完成后，其它等待中的协程才能执行，可以使用redis的setnx实现，利用了两个特性</p>
 <ul>
 <li>Redis是单线程执行命令</li>
 <li>setnx只有未设置过才能执行成功</li>
 </ul>
-<img src="image-20230815220516986.png" alt="image-20230815220516986" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819201017352.png" alt="image-20230819201017352"></p>
 <p>这一部分实现方式也是主要针对的是回调函数，回调函数中应该实现针<code>SetNX Get Del</code>等一系列操作，对于这几个接口的解释可参考如下：</p>
 <ul>
 <li>SETNX:用于设置键的值，但仅在该键不存在时执行</li>
@@ -1025,22 +1008,19 @@ Redis客户端常用命令字符串命令
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<h2 id="Redis使用注意事项"><a href="#Redis使用注意事项" class="headerlink" title="Redis使用注意事项"></a>Redis使用注意事项</h2><h3 id="大key，热key"><a href="#大key，热key" class="headerlink" title="大key，热key"></a>大key，热key</h3><img src="image-20230815221620518.png" alt="image-20230815221620518" style="zoom:67%;" />
-
+<h2 id="Redis使用注意事项"><a href="#Redis使用注意事项" class="headerlink" title="Redis使用注意事项"></a>Redis使用注意事项</h2><h3 id="大key，热key"><a href="#大key，热key" class="headerlink" title="大key，热key"></a>大key，热key</h3><p><img src="/2023/0815770/image-20230819201025552.png" alt="image-20230819201025552"></p>
 <p>大key的危害：</p>
 <ul>
 <li>读取成本高</li>
 <li>容易导致慢查询(过期，删除)</li>
 <li>主从复制异常，服务阻塞 无法正常响应请求</li>
 </ul>
-<img src="image-20230815221737547.png" alt="image-20230815221737547" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819201032921.png" alt="image-20230819201032921"></p>
 <h4 id="消除大key的方法"><a href="#消除大key的方法" class="headerlink" title="消除大key的方法"></a>消除大key的方法</h4><ol>
 <li>拆分</li>
 </ol>
 <p>​		  将大key拆分为小key，例如一个string拆分成多个string</p>
-<img src="image-20230815222358711.png" alt="image-20230815222358711" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819201040523.png" alt="image-20230819201040523"></p>
 <pre><code> 2. 压缩
 </code></pre>
 <p>​		  将value压缩后写入redis,读取时解压后在使用，压缩算法可以是gzip,snappy,lz4更，通常情况下，一个压缩算法压缩率高，则解压耗时就长，需要对实际数据进行测试后，选择一个合适的算法，如果存储的是JSON字符串，可以考虑使用MessagePack进行序列化</p>
@@ -1050,25 +1030,23 @@ Redis客户端常用命令字符串命令
 </code></pre>
 <p>热key的定义</p>
 <p>​		用户访问一个Key的QPS特别高，导致Server实例出现cPU负载突增或者不均的情况。热key没有明确的标准，QPS超过500就有可能被识别为热Key。</p>
-<img src="image-20230815223426780.png" alt="image-20230815223426780" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819201051178.png" alt="image-20230819201051178"></p>
 <h4 id="热key的解决方式"><a href="#热key的解决方式" class="headerlink" title="热key的解决方式"></a>热key的解决方式</h4><ol>
 <li>设置Localcache</li>
 </ol>
 <p>​		在访问Redis前，在业务服务侧设置Localcache,降低访问Redis的QPS。LocalCache中缓存过期或未命中，则从Redis中将数据更新到LocalCache。Java的Guava、Golang的Bigcache就是这类LocalCache。</p>
-<img src="image-20230815223710465.png" alt="image-20230815223710465" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819201059904.png" alt="image-20230819201059904"></p>
 <ol start="2">
 <li><p>拆分</p>
 <p>将key:valuei这一个热Key复制写入多份，例如key1:value,key2:value,访问的时候访问多个key,但value,是同一以此将qs分散到不同实例上，降低负载。代价是，更新时需要更新多个key,存在数据短暂不一致的风险。</p>
 </li>
 </ol>
-<img src="image-20230815223932546.png" alt="image-20230815223932546" style="zoom:67%;" />
-
+<p><img src="/2023/0815770/image-20230819201108160.png" alt="image-20230819201108160"></p>
 <ol start="3">
 <li><p>使用Redis代理的热key承载能力</p>
 <p>字节跳动的Redisi访问代理就具备热Key承载能力。本质上是结合了“热Key发现”、“LocalCache”两个功能</p>
-<img src="image-20230815224242803.png" alt="image-20230815224242803" style="zoom:67%;" /></li>
+<p><img src="/2023/0815770/image-20230819201113876.png" alt="image-20230819201113876"></p>
+</li>
 </ol>
 <h3 id="慢查询场景"><a href="#慢查询场景" class="headerlink" title="慢查询场景"></a>慢查询场景</h3><p>容易导致redis慢查询的操作</p>
 <ol>

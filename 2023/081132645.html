@@ -370,12 +370,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Gin/">
-                                <span class="chip bg-color">Gin</span>
-                            </a>
-                        
                             <a href="/tags/Go/">
                                 <span class="chip bg-color">Go</span>
+                            </a>
+                        
+                            <a href="/tags/Gin/">
+                                <span class="chip bg-color">Gin</span>
                             </a>
                         
                     </div>
@@ -453,7 +453,7 @@
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <p>在浏览器上输入<code>localhost:8080/index</code>则会弹出以下界面</p>
-<p><img src="/Gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20230811164517082.png" alt="image-20230811164517082"></p>
+<p><img src="/2023/081132645/image-20230811164517082.png" alt="image-20230811164517082"></p>
 <h2 id="gin-Context"><a href="#gin-Context" class="headerlink" title="gin.Context"></a>gin.Context</h2><p>​		在 Gin 中，Context 是一个非常重要的概念，用于处理 HTTP 请求和响应。在 Gin 的处理流程中，Context 贯穿整个处理过程，用于传递请求和响应的信息。</p>
 <p>​		Context 中封装了原生的 Go HTTP 请求和响应对象，同时还提供了一些方法，用于获取请求和响应的信息、设置响应头、设置响应状态码等操作。</p>
 <p>​		在 Gin 中，Context 是通过中间件来传递的。在处理 HTTP 请求时，Gin 会依次执行注册的中间件，每个中间件可以对 Context 进行一些操作，然后将 Context 传递给下一个中间件。</p>
@@ -461,12 +461,12 @@
         c<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span>http<span class="token punctuation">.</span>StatusOK<span class="token punctuation">,</span> <span class="token string">"返回txt"</span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="/Gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20230811165922279.png" alt="image-20230811165922279"></p>
+<p><img src="/2023/081132645/image-20230811165922279.png" alt="image-20230811165922279"></p>
 <h3 id="响应JSON"><a href="#响应JSON" class="headerlink" title="响应JSON"></a>响应JSON</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">_json</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     c<span class="token punctuation">.</span><span class="token function">JSON</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/Gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20230811170250547.png" alt="image-20230811170250547"></p>
+<p><img src="/2023/081132645/image-20230811170250547.png" alt="image-20230811170250547"></p>
 <h3 id="响应结构体，map和直接响应json"><a href="#响应结构体，map和直接响应json" class="headerlink" title="响应结构体，map和直接响应json"></a>响应结构体，map和直接响应json</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">_json</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">type</span> User <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         Username <span class="token builtin">string</span>
@@ -477,12 +477,12 @@
     c<span class="token punctuation">.</span><span class="token function">JSON</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/Gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20230811170607696.png" alt="image-20230811170607696"></p>
+<p><img src="/2023/081132645/image-20230811170607696.png" alt="image-20230811170607696"></p>
 <h3 id="响应xml"><a href="#响应xml" class="headerlink" title="响应xml"></a>响应xml</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">_xml</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     c<span class="token punctuation">.</span><span class="token function">XML</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> gin<span class="token punctuation">.</span>H<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"user"</span><span class="token punctuation">:</span> <span class="token string">"xsq"</span><span class="token punctuation">,</span> <span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string">"happy"</span><span class="token punctuation">,</span> <span class="token string">"like"</span><span class="token punctuation">:</span> <span class="token string">"play shopping"</span><span class="token punctuation">,</span> <span class="token string">"status"</span><span class="token punctuation">:</span> http<span class="token punctuation">.</span>StatusOK<span class="token punctuation">,</span> <span class="token string">"data"</span><span class="token punctuation">:</span> gin<span class="token punctuation">.</span>H<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"username"</span><span class="token punctuation">:</span> <span class="token string">"wangtao"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">:</span> <span class="token number">8</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/Gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20230811171002011.png" alt="image-20230811171002011"></p>
+<p><img src="/2023/081132645/image-20230811171002011.png" alt="image-20230811171002011"></p>
 <h3 id="响应yaml"><a href="#响应yaml" class="headerlink" title="响应yaml"></a>响应yaml</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">_yaml</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     c<span class="token punctuation">.</span><span class="token function">YAML</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> gin<span class="token punctuation">.</span>H<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"user"</span><span class="token punctuation">:</span> <span class="token string">"ys"</span><span class="token punctuation">,</span> <span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string">"hello"</span><span class="token punctuation">,</span> <span class="token string">"status"</span><span class="token punctuation">:</span> http<span class="token punctuation">.</span>StatusOK<span class="token punctuation">,</span> <span class="token string">"data"</span><span class="token punctuation">:</span> gin<span class="token punctuation">.</span>H<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"username"</span><span class="token punctuation">:</span> <span class="token string">"大黄"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">:</span> <span class="token number">8</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
@@ -497,7 +497,7 @@
     rou<span class="token punctuation">.</span><span class="token function">StaticFile</span><span class="token punctuation">(</span><span class="token string">"bizhi.png"</span><span class="token punctuation">,</span> <span class="token string">"static/bizhi.png"</span><span class="token punctuation">)</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/Gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20230811204828270.png" alt="image-20230811204828270"></p>
+<p><img src="/2023/081132645/image-20230811204828270.png" alt="image-20230811204828270"></p>
 <h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><p>重定向(Redirect)就是通过各种方法将各种网络请求重新定个方向转到其它位置</p>
 <pre><code>router.GET(&quot;/redirect&quot;, func(c *gin.Context) &#123;
     //支持内部和外部的重定向
@@ -508,7 +508,7 @@
     c<span class="token punctuation">.</span><span class="token function">Redirect</span><span class="token punctuation">(</span><span class="token number">302</span><span class="token punctuation">,</span> <span class="token string">"https://www.baidu.com/"</span><span class="token punctuation">)</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/Gin%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20230811172816884.png" alt="image-20230811172816884"></p>
+<p><img src="/2023/081132645/image-20230811172816884.png" alt="image-20230811172816884"></p>
 <h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><ul>
 <li>301 Moved Permanently</li>
 </ul>
@@ -687,12 +687,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Gin/">
-                                    <span class="chip bg-color">Gin</span>
-                                </a>
-                            
                                 <a href="/tags/Go/">
                                     <span class="chip bg-color">Go</span>
+                                </a>
+                            
+                                <a href="/tags/Gin/">
+                                    <span class="chip bg-color">Gin</span>
                                 </a>
                             
                         </div>

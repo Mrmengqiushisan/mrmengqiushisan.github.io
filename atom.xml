@@ -6,7 +6,7 @@
   <link href="https://mrmengqiushisan.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrmengqiushisan.github.io/"/>
-  <updated>2023-08-19T09:19:36.467Z</updated>
+  <updated>2023-08-24T14:38:23.609Z</updated>
   <id>https://mrmengqiushisan.github.io/</id>
   
   <author>
@@ -17,15 +17,124 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>网络安全</title>
+    <link href="https://mrmengqiushisan.github.io/2023/082445331.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/082445331.html</id>
+    <published>2023-08-24T11:49:12.000Z</published>
+    <updated>2023-08-24T14:38:23.609Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;网络安全泄漏的分类&quot;&gt;&lt;a href=&quot;#网络安全泄漏的分类&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络安全" scheme="https://mrmengqiushisan.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++设计模式</title>
+    <link href="https://mrmengqiushisan.github.io/2023/082221407.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/082221407.html</id>
+    <published>2023-08-22T11:51:25.000Z</published>
+    <updated>2023-08-31T15:11:47.782Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;工厂模式&quot;&gt;&lt;a href=&quot;#工厂模式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="设计模式" scheme="https://mrmengqiushisan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>架构设计</title>
+    <link href="https://mrmengqiushisan.github.io/2023/082244269.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/082244269.html</id>
+    <published>2023-08-22T11:48:50.000Z</published>
+    <updated>2023-08-22T13:08:29.927Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;单机架构&quot;&gt;&lt;a href=&quot;#单机架构&quot; class=&quot;headerlink&quot; title=&quot;单机架构&quot;&gt;&lt;/a&gt;单机架构&lt;/h2&gt;&lt;p&gt;软件系统需要具备对外提供服务，单机，就是把所有功能都实现在一个进程里，并部署在一台机器上。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="产品架构" scheme="https://mrmengqiushisan.github.io/categories/%E4%BA%A7%E5%93%81%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows编程</title>
+    <link href="https://mrmengqiushisan.github.io/2023/082060118.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/082060118.html</id>
+    <published>2023-08-20T05:44:13.000Z</published>
+    <updated>2023-08-20T15:20:18.391Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;MessageBoxA和MessageBoxEx和MessageBox有什么区别&quot;&gt;&lt;a href=&quot;#MessageBoxA和MessageBoxEx和MessageBox有什么区别&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络编程" scheme="https://mrmengqiushisan.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="MFC" scheme="https://mrmengqiushisan.github.io/tags/MFC/"/>
+    
+    <category term="Windows" scheme="https://mrmengqiushisan.github.io/tags/Windows/"/>
+    
+    <category term="SOCKET" scheme="https://mrmengqiushisan.github.io/tags/SOCKET/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Go消息队列</title>
     <link href="https://mrmengqiushisan.github.io/2023/081964717.html"/>
     <id>https://mrmengqiushisan.github.io/2023/081964717.html</id>
     <published>2023-08-19T09:19:36.000Z</published>
-    <updated>2023-08-19T09:19:36.467Z</updated>
+    <updated>2023-08-19T12:03:36.863Z</updated>
     
     
     
     
+    <category term="消息队列" scheme="https://mrmengqiushisan.github.io/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+    
+    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
     
   </entry>
   
@@ -34,7 +143,7 @@
     <link href="https://mrmengqiushisan.github.io/2023/081715494.html"/>
     <id>https://mrmengqiushisan.github.io/2023/081715494.html</id>
     <published>2023-08-17T12:36:03.000Z</published>
-    <updated>2023-08-17T12:36:03.647Z</updated>
+    <updated>2023-08-19T09:19:50.877Z</updated>
     
     
     
@@ -47,7 +156,7 @@
     <link href="https://mrmengqiushisan.github.io/2023/081652827.html"/>
     <id>https://mrmengqiushisan.github.io/2023/081652827.html</id>
     <published>2023-08-16T07:51:03.000Z</published>
-    <updated>2023-08-16T14:14:49.109Z</updated>
+    <updated>2023-08-19T12:14:19.367Z</updated>
     
     
       
@@ -72,14 +181,14 @@
     <link href="https://mrmengqiushisan.github.io/2023/0815770.html"/>
     <id>https://mrmengqiushisan.github.io/2023/0815770.html</id>
     <published>2023-08-15T10:53:46.000Z</published>
-    <updated>2023-08-19T08:57:00.817Z</updated>
+    <updated>2023-08-19T12:12:52.092Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;为什么需要Redis&quot;&gt;&lt;a href=&quot;#为什么需要Redis&quot; class=&quot;headerlink&quot; title=&quot;为什么需要Redis&quot;&gt;&lt;/a&gt;为什么需要Redis&lt;/h2&gt;&lt;img src=&quot;image-20230815185729828.png&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;为什么需要Redis&quot;&gt;&lt;a href=&quot;#为什么需要Redis&quot; class=&quot;headerlink&quot; title=&quot;为什么需要Redis&quot;&gt;&lt;/a&gt;为什么需要Redis&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
         
       
     
@@ -99,7 +208,7 @@
     <link href="https://mrmengqiushisan.github.io/2023/081337957.html"/>
     <id>https://mrmengqiushisan.github.io/2023/081337957.html</id>
     <published>2023-08-13T07:20:52.000Z</published>
-    <updated>2023-08-15T10:28:03.648Z</updated>
+    <updated>2023-08-19T12:14:48.208Z</updated>
     
     
       
@@ -162,7 +271,7 @@
     <link href="https://mrmengqiushisan.github.io/2023/081132645.html"/>
     <id>https://mrmengqiushisan.github.io/2023/081132645.html</id>
     <published>2023-08-11T08:14:56.000Z</published>
-    <updated>2023-08-15T10:28:03.645Z</updated>
+    <updated>2023-08-19T12:15:25.432Z</updated>
     
     
       
@@ -178,9 +287,9 @@
     <category term="Gin" scheme="https://mrmengqiushisan.github.io/categories/Gin/"/>
     
     
-    <category term="Gin" scheme="https://mrmengqiushisan.github.io/tags/Gin/"/>
-    
     <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
+    
+    <category term="Gin" scheme="https://mrmengqiushisan.github.io/tags/Gin/"/>
     
   </entry>
   
@@ -437,115 +546,6 @@
     <category term="信号与槽函数" scheme="https://mrmengqiushisan.github.io/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%A7%BD%E5%87%BD%E6%95%B0/"/>
     
     <category term="QSignalMapper" scheme="https://mrmengqiushisan.github.io/tags/QSignalMapper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高质量编程及编程规范</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080737510.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080737510.html</id>
-    <published>2023-08-07T15:17:59.000Z</published>
-    <updated>2023-08-07T15:21:13.768Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;高质量编程&lt;/p&gt;
-&lt;h3 id=&quot;代码格式&quot;&gt;&lt;a href=&quot;#代码格式&quot; class=&quot;headerlink&quot; title=&quot;代码格式&quot;&gt;&lt;/a&gt;代码格式&lt;/h3&gt;&lt;p&gt;gofmt go语言官方提供的工具，能自动格式化go语言代码为官方统一风格&lt;/p&gt;
-&lt;h3</summary>
-        
-      
-    
-    
-    
-    <category term="编程规范" scheme="https://mrmengqiushisan.github.io/categories/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/"/>
-    
-    
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTTP</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080735944.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080735944.html</id>
-    <published>2023-08-07T14:34:19.000Z</published>
-    <updated>2023-08-14T07:24:10.323Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;再谈HTTP协议&lt;/p&gt;
-&lt;h2 id=&quot;HTTP协议是什么&quot;&gt;&lt;a href=&quot;#HTTP协议是什么&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/categories/Go/"/>
-    
-    
-    <category term="HTTP" scheme="https://mrmengqiushisan.github.io/tags/HTTP/"/>
-    
-    <category term="web" scheme="https://mrmengqiushisan.github.io/tags/web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>语言进阶与依赖管理</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080736829.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080736829.html</id>
-    <published>2023-08-07T09:49:41.000Z</published>
-    <updated>2023-08-07T15:02:37.131Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;并发编程&quot;&gt;&lt;a href=&quot;#并发编程&quot; class=&quot;headerlink&quot; title=&quot;并发编程&quot;&gt;&lt;/a&gt;并发编程&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/categories/Go/"/>
-    
-    
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
-    
-    <category term="thread" scheme="https://mrmengqiushisan.github.io/tags/thread/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Go后端基础课</title>
-    <link href="https://mrmengqiushisan.github.io/2023/08071422.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/08071422.html</id>
-    <published>2023-08-07T09:09:38.000Z</published>
-    <updated>2023-08-08T02:36:53.909Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;函数&quot;&gt;&lt;a href=&quot;#函数&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/categories/Go/"/>
-    
-    
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
-    
-    <category term="后端" scheme="https://mrmengqiushisan.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
