@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>静态库使用</title>
+      <link href="/2023/090526179.html"/>
+      <url>/2023/090526179.html</url>
+      
+        <content type="html"><![CDATA[<p>GCC工作流程</p><p><img src="/2023/090526179/0dc636c7a1f38e9dd6388d09b7030136.png" alt="0dc636c7a1f38e9dd6388d09b7030136"></p><p><img src="/2023/090526179/f6fd2a4fa5abb40922f565d600a59968.png" alt="f6fd2a4fa5abb40922f565d600a59968"></p><p><img src="/2023/090526179/f155c5e1139fc86a3d9a8f50f8597bc0.png" alt="f155c5e1139fc86a3d9a8f50f8597bc0"></p><p><img src="/2023/090526179/6decac904e247b8482929b00826ee0d1.png" alt="6decac904e247b8482929b00826ee0d1"></p><p>注意：.i为预处理文件 .s为汇编文件 .o为目标文件 .out为可执行文件</p><p>同样也可以通过gcc来编译c++代码，原则上gcc在程序的预处理，编译文件，汇编文件，不可以进行链接但可以指定<code>-stdc++</code>来使用gcc生成可执行文件</p><p><img src="/2023/090526179/199534084dfb63cb430dc4d3df5c81ec.png" alt="199534084dfb63cb430dc4d3df5c81ec"></p><h2 id="库的定义与特点"><a href="#库的定义与特点" class="headerlink" title="库的定义与特点"></a>库的定义与特点</h2><ol><li>库文件是计算机上的一类文件，可以简单的把库文件看成一种代码仓库，它提供给使用者一些可以直接拿来用的变量、函数或类。</li><li>库是特殊的一种程序，编写库的程序和编写一般的程序区别不大，只是库不能单独运行。</li><li>库文件有两种，静态库和动态库（共享库），区别是：静态库在程序的链接阶段被复制到了程序中；动态库在链接阶段没有被复制到程序中，而是程序在运行时由系统动态加载到内存中供程序调用。</li><li>库的好处：1.代码保密 2.方便部署和分发</li></ol><h2 id="静态库的制作"><a href="#静态库的制作" class="headerlink" title="静态库的制作"></a>静态库的制作</h2><p><img src="/2023/090526179/image-20230905212311428.png" alt="image-20230905212311428"></p><p><img src="/2023/090526179/image-20230905213403681.png" alt="image-20230905213403681"></p><p><img src="/2023/090526179/image-20230905213427862.png" alt="image-20230905213427862"></p><h2 id="静态库的使用"><a href="#静态库的使用" class="headerlink" title="静态库的使用"></a>静态库的使用</h2><p><img src="/2023/090526179/image-20230905215133541.png" alt="image-20230905215133541"></p><p><img src="/2023/090526179/image-20230905215334268.png" alt="image-20230905215334268"></p><h2 id="动态库的制作"><a href="#动态库的制作" class="headerlink" title="动态库的制作"></a>动态库的制作</h2><p><img src="/2023/090526179/image-20230905215616532.png" alt="image-20230905215616532"></p><p><img src="/2023/090526179/image-20230905220446660.png" alt="image-20230905220446660"></p><h2 id="静态库与动态库的区别"><a href="#静态库与动态库的区别" class="headerlink" title="静态库与动态库的区别"></a>静态库与动态库的区别</h2><ol><li>静态库：GCC进行链接时，会把静态库中代码打包到可执行程序中</li><li>动态库：GCC进行链接时T动态库的代码不会被打包到可执行程序中</li><li>程序启动之后，动态库会被动态加载到内存中，通过1dd(list dynamicdependencies)命令检查动态库依赖关系</li><li>如何定位共享库文件呢？当系统加载可执行代码时候，能够知道其所依赖的库的名字，但是还需要知道绝对路径。此时就需要系统的动态载入器来获取该绝对路径。对于elf格式的可执行程序，是由ld-1inux.so来完成的，它先后搜索elf文件的DT_RPATH段一&gt;环境变量LD_LIBRARY_PATH一&gt;&#x2F;etc&#x2F;1d.so.cache文件列表-&gt;&#x2F;1ib&#x2F;,&#x2F;usr&#x2F;1ib目录找到库文件后将其载入内存。</li></ol><h2 id="这种配置方式是临时的"><a href="#这种配置方式是临时的" class="headerlink" title="这种配置方式是临时的"></a>这种配置方式是临时的</h2><p><img src="/2023/090526179/image-20230905222933320.png" alt="image-20230905222933320"></p><p>通过修改<code>.ashrc</code>文件添加环境变量来实现全局配置，配置之后需要执行source .bashrc命令生效</p><p>通过修改&#x2F;etc&#x2F;profile&#x2F;文件中的环境变量实现全局配置</p><p>通过修改&#x2F;etc&#x2F;ld.so.conf 直接添加绝对路径即可，无需添加LD_LIBRARY_PATH环境变量 记得更新sudo ldconfig</p><h2 id="静态库的优缺点"><a href="#静态库的优缺点" class="headerlink" title="静态库的优缺点"></a>静态库的优缺点</h2><p>优点：</p><ol><li>静态库被打包到应用程序中加载速度快</li><li>发布程序无需提供静态库，移植方便</li></ol><p>缺点：</p><ol><li>消耗系统资源，浪费内存</li><li>更新、部署、发布麻烦</li></ol><p><img src="/2023/090526179/image-20230906102202481.png" alt="image-20230906102202481"></p><h2 id="动态库的优缺点"><a href="#动态库的优缺点" class="headerlink" title="动态库的优缺点"></a>动态库的优缺点</h2><p>优点：</p><ol><li>可以实现进程间资源共享</li><li>更新、部署、发布简单</li><li>可以控制何时加载动态库</li></ol><p>缺点：</p><ol><li>加载速度比静态库慢</li><li>发布程序时需要提供依赖的动态库</li></ol><p><img src="/2023/090526179/image-20230906102540214.png" alt="image-20230906102540214"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 静态库动态库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>网络安全</title>
       <link href="/2023/082445331.html"/>
       <url>/2023/082445331.html</url>
