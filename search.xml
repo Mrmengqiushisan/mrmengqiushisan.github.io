@@ -4,6 +4,114 @@
   
     
     <entry>
+      <title>线段树的原理与应用</title>
+      <link href="/2023/11123502.html"/>
+      <url>/2023/11123502.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="线段树的原理及实现"><a href="#线段树的原理及实现" class="headerlink" title="线段树的原理及实现"></a>线段树的原理及实现</h2><p>线段树解决的是区间和的问题，且该区间会被修改；线段树主要实现的是两个方法：求区间和以及修改区间，时间复杂度均为O(longn)</p><p><strong>需要记住的是：线段树的每个节点代表一个区间</strong><br>$$<br>num&#x3D;[1,2,3,4,5]，对应的线段树如下:<br>$$<br><img src="/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/image-20231112144709625.png" alt="image-20231112144709625"></p><p>从图中可以看到，每个节点代表一个区间，而节点的值就是该区间的和(可以根据题目问题，改变表示的含义)</p><ol><li>数字之和：总数字之和&#x3D;左区间之和+右区间之和</li><li>最大公因数：总GCD&#x3D;gcd(左区间GCD，右区间GCD)</li><li>最大值：总最大值&#x3D;max(左区间最大值，右区间最大值)</li></ol><h2 id="线段树的数据结构"><a href="#线段树的数据结构" class="headerlink" title="线段树的数据结构"></a>线段树的数据结构</h2><p>我们可以使用数组来表示一个线段树，假如根节点为i,那么它对应的左右节点为<br>$$<br>left&#x3D;2<em>i+1;<br>right&#x3D;2</em>i+2;<br>$$<br>我们也可以使用链表创建一颗线段树，其数据结构如下：</p><pre class=" language-c++"><code class="language-c++">class Node&#123;    Node* left,*right;    int val;&#125;</code></pre><h2 id="线段树的建立"><a href="#线段树的建立" class="headerlink" title="线段树的建立"></a>线段树的建立</h2><p>如何题目中给出了具体的区间范围，我们根据给范围可以建立线段树</p><pre class=" language-c++"><code class="language-c++">class SegNode &#123;public:    int val;    SegNode* left;    SegNode* right;&#125;;class NumArray &#123;public:    NumArray(vector<int>& nums) &#123;        m_num = nums;        head = new SegNode();        buildTree(head, 0, m_num.size() - 1);    &#125;    void update(int index, int val) &#123;        upDateTree(head, 0, m_num.size() - 1, index, val);    &#125;    int sumRange(int left, int right) &#123;        return searchTree(head, 0, m_num.size() - 1, left, right);    &#125;protected:    void buildTree(SegNode* node, int start, int end) &#123;        if (start == end) &#123;            node->val = m_num[start];            return;        &#125;        int mid = (start + end) >> 1;        node->left = new SegNode();        buildTree(node->left, start, mid);        node->right = new SegNode();        buildTree(node->right, mid + 1, end);        pushUp(node);    &#125;    void upDateTree(SegNode* node, int start, int end, int index, int val) &#123;        if (index == start && index == end) &#123;            node->val = val;            return;        &#125;        int mid = (start + end) >> 1;        if (index <= mid)upDateTree(node->left, start, mid, index, val);        else upDateTree(node->right, mid + 1, end, index, val);        pushUp(node);    &#125;    int searchTree(SegNode* node, int start, int end, int left, int right) &#123;        if (start == left && end == right)return node->val;        int mid = (start + end) >> 1;        int res&#123; 0 &#125;;        if (right <= mid) &#123;            res += searchTree(node->left, start, mid, left, right);        &#125;        else if (left > mid) &#123;            res += searchTree(node->right, mid + 1, end, left, right);        &#125;        else &#123;            res += searchTree(node->left, start, mid, left, mid) +                searchTree(node->right, mid + 1, end, mid + 1, right);        &#125;        return res;    &#125;    void pushUp(SegNode* node) &#123;        node->val = node->left->val + node->right->val;    &#125;private:    vector<int> m_num;    SegNode* head;&#125;;</code></pre><p>通过以上的方法可以构建固定范围内的线段树，该数可以实现数据的区间查询，修改等操作</p><h2 id="动态开点"><a href="#动态开点" class="headerlink" title="动态开点"></a>动态开点</h2><p>很多情况下，题目中都没有给出很多具体的范围，只有数据的取值范围，一般都很大 我们常用的是动态开点的方法；动态开点的方法区别在于采用自顶向下的方式进行创建，如下图所示。</p><p><img src="/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/image-20231112155229140.png" alt="image-20231112155229140"></p><p><img src="/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/image-20231112155238311.png" alt="image-20231112155238311"></p><p><img src="/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/image-20231112155211369.png" alt="image-20231112155211369"></p><h2 id="线段树的更新"><a href="#线段树的更新" class="headerlink" title="线段树的更新"></a>线段树的更新</h2><p>针对线段树的更新其实可以分为两种形式：<strong>点更新和区间更新</strong>，这两种情况其实都可以看多区间更新，更新区间的前提是找到需要更新的区间，和查询的思路相似；如果我们要把区间[2,4]内的元素都加1</p><p><img src="/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/image-20231112164908058.png" alt="image-20231112164908058"></p><p>我们可以发现，图中对应的更新区间只是[2,2]和[3,4]这两个区间对应的节点，而区间[3,3]和[4,4]没有更新；这是因为我们使用了懒惰标记的方法，我们只需要更新到满足条件的区间即可，然后再给该区间对应的节点加一个懒惰标记，表示该节点所有对应的孩子节点都应该有此更新。</p><p>这时候Node的数据结构应该发生改变</p><pre><code>class Node&#123;    //左右孩子节点    Node* left,*right;    //当前节点值    int val;    //懒惰标记    int add;&#125;</code></pre><p>基于「动态开点」的前提，我们下推懒惰标记的时候，如果节点不存在左右孩子节点，那么我们就创建左右孩子节点</p><p>先来实现下推懒惰标记的函数：</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 线段树 </tag>
+            
+            <tag> 树结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FFmpeg结构体</title>
+      <link href="/2023/102538383.html"/>
+      <url>/2023/102538383.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="整体关系介绍"><a href="#整体关系介绍" class="headerlink" title="整体关系介绍"></a>整体关系介绍</h2><p><img src="/FFmpeg%E7%BB%93%E6%9E%84%E4%BD%93/image-20231026092202479.png" alt="image-20231026092202479"></p><h3 id="解协议"><a href="#解协议" class="headerlink" title="解协议"></a>解协议</h3><p>AVIOContext,URLProtocol,URLContext主要存储视音频使用的协议的类型以及状态。URLProtocol存储输入视音频使用的封装格式。每种协议都对应一个URLProtocol结构。</p><h3 id="解封装"><a href="#解封装" class="headerlink" title="解封装"></a>解封装</h3><p>AVFormatContext主要存储视音频封装格式中包含的信息；AVInputFormat存储输入视音频使用的封装格式。每种视音频封装格式都对应一个AVInputFormat 结构。</p><h3 id="解码"><a href="#解码" class="headerlink" title="解码"></a>解码</h3><p>每个AVStream存储一个视频&#x2F;音频流的相关数据；每个AVStream对应一个AVCodecContext，存储该视频&#x2F;音频流使用解码方式的相关数据；每个AVCodecContext中对应一个AVCodec，包含该视频&#x2F;音频对应的解码器。每种解码器都对应一个AVCodec结构。</p><h3 id="存数据"><a href="#存数据" class="headerlink" title="存数据"></a>存数据</h3><p>数据视频的话，每个结构一般是存一帧；音频可能有好几帧；解码前数据：AVPacket；解码后数据：AVFrame；</p><h2 id="AVFormatContext"><a href="#AVFormatContext" class="headerlink" title="AVFormatContext"></a>AVFormatContext</h2><p>AVFormatContext是包含码流参数较多的结构体, 结构体的定义位于<code>avformat.h</code>.</p><p>在使用FFMPEG进行开发的时候，AVFormatContext是一个贯穿始终的数据结构，很多函数都要用到它作为参数。它是FFMPEG解封装（flv，mp4，rmvb，avi）功能的结构体。下面看几个主要变量的作用（在这里考虑解码的情况）：</p><pre class=" language-c++"><code class="language-c++">struct AVInputFormat *iformat：输入数据的封装格式AVIOContext *pb：输入数据的缓存unsigned int nb_streams：视音频流的个数AVStream **streams：视音频流char filename[1024]：文件名int64_t duration：时长（单位：微秒us，转换为秒需要除以1000000）int bit_rate：比特率（单位bps，转换为kbps需要除以1000）AVDictionary *metadata：元数据</code></pre><h2 id="AVIOContext"><a href="#AVIOContext" class="headerlink" title="AVIOContext"></a>AVIOContext</h2><p>AVIOContext是FFMPEG管理输入输出数据的结构体, 结构体的定义位于<code>avio.h</code>.<br>AVIOContext中有以下几个变量比较重要：</p><pre class=" language-c++"><code class="language-c++">unsigned char *buffer：缓存开始位置int buffer_size：缓存大小（默认32768）unsigned char *buf_ptr：当前指针读取到的位置unsigned char *buf_end：缓存结束的位置void *opaque：URLContext结构体</code></pre><p>在解码的情况下，buffer用于存储ffmpeg读入的数据，例如打开一个视频文件的时候，先把数据从硬盘读入buffer，然后在送给解码器用于解码。</p><p>其中opaque指向了URLContext。<br>注意，这个结构体并不在FFMPEG提供的头文件中，而是在FFMPEG的源代码中。从FFMPEG源代码中翻出的定义如下所示：</p><pre class=" language-c++"><code class="language-c++">typedef struct URLContext &#123;    const AVClass *av_class; ///< information for av_log(). Set by url_open().    struct URLProtocol *prot;    int flags;    int is_streamed;  /**< true if streamed (no seek possible), default = false */    int max_packet_size;  /**< if non zero, the stream is packetized with this max packet size */    void *priv_data;    char *filename; /**< specified URL */    int is_connected;    AVIOInterruptCB interrupt_callback;&#125; URLContext;</code></pre><p>URLContext结构体中还有一个结构体URLProtocol。注：每种协议（rtp，rtmp，file等）对应一个URLProtocol。这个结构体也不在FFMPEG提供的头文件中。从FFMPEG源代码中翻出其的定义：</p><pre class=" language-c++"><code class="language-c++">typedef struct URLProtocol &#123;    const char *name;//协议的名称    int (*url_open)(URLContext *h, const char *url, int flags);    int (*url_read)(URLContext *h, unsigned char *buf, int size);    int (*url_write)(URLContext *h, const unsigned char *buf, int size);    int64_t (*url_seek)(URLContext *h, int64_t pos, int whence);    int (*url_close)(URLContext *h);    struct URLProtocol *next;    int (*url_read_pause)(URLContext *h, int pause);    int64_t (*url_read_seek)(URLContext *h, int stream_index,        int64_t timestamp, int flags);    int (*url_get_file_handle)(URLContext *h);    int priv_data_size;    const AVClass *priv_data_class;    int flags;    int (*url_check)(URLContext *h, int mask);&#125; URLProtocol;</code></pre><p>在这个结构体中，除了一些回调函数接口之外，有一个变量const char *name，该变量存储了协议的名称。每一种输入协议都对应这样一个结构体。</p><p>比如说，文件协议中代码如下（file.c）：</p><pre class=" language-c++"><code class="language-c++">URLProtocol ff_file_protocol = &#123;    .name                = "file",    .url_open            = file_open,    .url_read            = file_read,    .url_write           = file_write,    .url_seek            = file_seek,    .url_close           = file_close,    .url_get_file_handle = file_get_handle,    .url_check           = file_check,&#125;;</code></pre><h2 id="AVStream"><a href="#AVStream" class="headerlink" title="AVStream"></a>AVStream</h2><p>AVStream是存储每一个音视频流信息的结构体。</p><p>AVStream重要的变量如下:</p><pre class=" language-c++"><code class="language-c++">int index：标识该视频/音频流AVCodecContext *codec：指向该视频/音频流的AVCodecContext（它们是一一对应的关系）AVRational time_base：时基。通过该值可以把PTS，DTS转化为真正的时间。FFMPEG其他结构体中也有这个字段，但是根据我的经验，只有AVStream中的time_base是可用的。PTS*time_base=真正的时间int64_t duration：该视频/音频流长度AVDictionary *metadata：元数据信息AVRational avg_frame_rate：帧率（注：对视频来说，这个挺重要的）AVPacket attached_pic：附带的图片。比如说一些MP3，AAC音频文件附带的专辑封面。</code></pre><h2 id="AVCodecContext"><a href="#AVCodecContext" class="headerlink" title="AVCodecContext"></a>AVCodecContext</h2><p>AVCodecContext是包含变量较多的结构体（感觉差不多是变量最多的结构体）, 结构体的定义位于<code>avcodec.h</code>中.<br>AVCodecContext关键的变量如下所示（这里只考虑解码）：</p><pre class=" language-c++"><code class="language-c++">enum AVMediaType codec_type：编解码器的类型（视频，音频...）struct AVCodec  *codec：采用的解码器AVCodec（H.264,MPEG2...）int bit_rate：平均比特率uint8_t *extradata; int extradata_size：针对特定编码器包含的附加信息（例如对于H.264解码器来说，存储SPS，PPS等）AVRational time_base：根据该参数，可以把PTS转化为实际的时间（单位为秒s）int width, height：如果是视频的话，代表宽和高int refs：运动估计参考帧的个数（H.264的话会有多帧，MPEG2这类的一般就没有了）int sample_rate：采样率（音频）int channels：声道数（音频）enum AVSampleFormat sample_fmt：采样格式int profile：型（H.264里面就有，其他编码标准应该也有）int level：级（和profile差不太多）</code></pre><p>在这里需要注意：AVCodecContext中很多的参数是编码的时候使用的，而不是解码的时候使用的。</p><h4 id="codec-type"><a href="#codec-type" class="headerlink" title="codec_type"></a>codec_type</h4><p>编解码器类型有以下几种</p><pre class=" language-c++"><code class="language-c++">enum AVMediaType &#123;    AVMEDIA_TYPE_UNKNOWN = -1,  ///< Usually treated as AVMEDIA_TYPE_DATA    AVMEDIA_TYPE_VIDEO,    AVMEDIA_TYPE_AUDIO,    AVMEDIA_TYPE_DATA,          ///< Opaque data information usually continuous    AVMEDIA_TYPE_SUBTITLE,    AVMEDIA_TYPE_ATTACHMENT,    ///< Opaque data information usually sparse    AVMEDIA_TYPE_NB&#125;;</code></pre><h4 id="sample-fmt"><a href="#sample-fmt" class="headerlink" title="sample_fmt"></a>sample_fmt</h4><p>在ffmpeg中音频采样格式有以下几种：</p><pre class=" language-c++"><code class="language-c++">enum AVSampleFormat &#123;    AV_SAMPLE_FMT_NONE = -1,    AV_SAMPLE_FMT_U8,          ///< unsigned 8 bits    AV_SAMPLE_FMT_S16,         ///< signed 16 bits    AV_SAMPLE_FMT_S32,         ///< signed 32 bits    AV_SAMPLE_FMT_FLT,         ///< float    AV_SAMPLE_FMT_DBL,         ///< double     AV_SAMPLE_FMT_U8P,         ///< unsigned 8 bits, planar    AV_SAMPLE_FMT_S16P,        ///< signed 16 bits, planar    AV_SAMPLE_FMT_S32P,        ///< signed 32 bits, planar    AV_SAMPLE_FMT_FLTP,        ///< float, planar    AV_SAMPLE_FMT_DBLP,        ///< double, planar     AV_SAMPLE_FMT_NB           ///< Number of sample formats. DO NOT USE if linking dynamically&#125;;</code></pre><h4 id="profile"><a href="#profile" class="headerlink" title="profile"></a>profile</h4><p>在FFMPEG中型有以下几种，可以看出AAC，MPEG2，H.264，VC-1，MPEG4都有<code>profile</code>的概念。</p><pre class=" language-c++"><code class="language-c++">#define FF_PROFILE_UNKNOWN -99#define FF_PROFILE_RESERVED -100 #define FF_PROFILE_AAC_MAIN 0#define FF_PROFILE_AAC_LOW  1#define FF_PROFILE_AAC_SSR  2#define FF_PROFILE_AAC_LTP  3#define FF_PROFILE_AAC_HE   4#define FF_PROFILE_AAC_HE_V2 28#define FF_PROFILE_AAC_LD   22#define FF_PROFILE_AAC_ELD  38 #define FF_PROFILE_H264_CONSTRAINED  (1<<9)  // 8+1; constraint_set1_flag#define FF_PROFILE_H264_INTRA        (1<<11) // 8+3; constraint_set3_flag #define FF_PROFILE_H264_BASELINE             66#define FF_PROFILE_H264_CONSTRAINED_BASELINE (66|FF_PROFILE_H264_CONSTRAINED)#define FF_PROFILE_H264_MAIN                 77#define FF_PROFILE_H264_EXTENDED             88#define FF_PROFILE_H264_HIGH                 100#define FF_PROFILE_H264_HIGH_10              110#define FF_PROFILE_H264_HIGH_10_INTRA        (110|FF_PROFILE_H264_INTRA)#define FF_PROFILE_H264_HIGH_422             122#define FF_PROFILE_H264_HIGH_422_INTRA       (122|FF_PROFILE_H264_INTRA)#define FF_PROFILE_H264_HIGH_444             144#define FF_PROFILE_H264_HIGH_444_PREDICTIVE  244#define FF_PROFILE_H264_HIGH_444_INTRA       (244|FF_PROFILE_H264_INTRA)#define FF_PROFILE_H264_CAVLC_444            44</code></pre><h2 id="AVCodec"><a href="#AVCodec" class="headerlink" title="AVCodec"></a>AVCodec</h2><p>AVCodec是存储解码器信息的结构体</p><pre class=" language-c++"><code class="language-c++">const char *name：编解码器的名字，比较短const char *long_name：编解码器的名字，全称，比较长enum AVMediaType type：指明了类型，是视频，音频，还是字幕enum AVCodecID id：ID，不重复const AVRational *supported_framerates：支持的帧率（仅视频）const enum AVPixelFormat *pix_fmts：支持的像素格式（仅视频）const int *supported_samplerates：支持的采样率（仅音频）const enum AVSampleFormat *sample_fmts：支持的采样格式（仅音频）const uint64_t *channel_layouts：支持的声道数（仅音频）int priv_data_size：私有数据的大小</code></pre><h2 id="AVPacket"><a href="#AVPacket" class="headerlink" title="AVPacket"></a>AVPacket</h2><p>AVPacket是存储压缩编码数据相关信息的结构体，</p><pre class=" language-c++"><code class="language-c++">uint8_t *data：压缩编码的数据。例如对于H.264来说。1个AVPacket的data通常对应一个NAL。注意：在这里只是对应，而不是一模一样。他们之间有微小的差别：[使用FFMPEG类库分离出多媒体文件中的H.264码流](https://blog.csdn.net/leixiaohua1020/article/details/11800877)因此在使用FFMPEG进行视音频处理的时候，常常可以将得到的AVPacket的data数据直接写成文件，从而得到视音频的码流文件。int   size：data的大小int64_t pts：显示时间戳int64_t dts：解码时间戳int   stream_index：标识该AVPacket所属的视频/音频流。</code></pre><h2 id="AVFrame"><a href="#AVFrame" class="headerlink" title="AVFrame"></a>AVFrame</h2><p>AVFrame是包含码流参数较多的结构体, 结构体的定义位于<code>avcodec.h</code>中.<br>AVFrame结构体一般用于存储原始数据（即非压缩数据，例如对视频来说是YUV，RGB，对音频来说是PCM），此外还包含了一些相关的信息。比如说，解码的时候存储了宏块类型表，QP表，运动矢量表等数据。编码的时候也存储了相关的数据。因此在使用FFMPEG进行码流分析的时候，AVFrame是一个很重要的结构体。下面看几个主要变量的作用（在这里考虑解码的情况）：</p><pre class=" language-c++"><code class="language-c++">uint8_t *data[AV_NUM_DATA_POINTERS]：解码后原始数据（对视频来说是YUV，RGB，对音频来说是PCM）int linesize[AV_NUM_DATA_POINTERS]：data中“一行”数据的大小。注意：未必等于图像的宽，一般大于图像的宽。int width, height：视频帧宽和高（1920x1080,1280x720...）int nb_samples：音频的一个AVFrame中可能包含多个音频帧，在此标记包含了几个int format：解码后原始数据类型（YUV420，YUV422，RGB24...）int key_frame：是否是关键帧enum AVPictureType pict_type：帧类型（I,B,P...）AVRational sample_aspect_ratio：宽高比（16:9，4:3...）int64_t pts：显示时间戳int coded_picture_number：编码帧序号int display_picture_number：显示帧序号int8_t *qscale_table：QP表uint8_t *mbskip_table：跳过宏块表int16_t (*motion_val[2])[2]：运动矢量表uint32_t *mb_type：宏块类型表short *dct_coeff：DCT系数，这个没有提取过int8_t *ref_index[2]：运动估计参考帧列表（貌似H.264这种比较新的标准才会涉及到多参考帧）int interlaced_frame：是否是隔行扫描uint8_t motion_subsample_log2：一个宏块中的运动矢量采样个数，取log的</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> FFmpeg </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> 音视频 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>QOpenGLWidget学习</title>
+      <link href="/2023/102337171.html"/>
+      <url>/2023/102337171.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Qt </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> QOpenGLWidget </tag>
+            
+            <tag> 三维渲染 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MakeFile</title>
+      <link href="/2023/090650137.html"/>
+      <url>/2023/090650137.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是MakeFile"><a href="#什么是MakeFile" class="headerlink" title="什么是MakeFile"></a>什么是MakeFile</h2><ol><li>一个工程中的源文件不计其数，其按类型、功能、模块分别放在若干个目录中，Makefile文件定义了一系列的规则来指定哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为Makefile文件就像一个shel1脚本一样，也可以执行操作系统的命令。</li><li>Makefile带来的好处就是“自动化编译”，一旦写好，只需要一个make命令，整个工程完全自动编译，极大的提高了软件开发的效率。make是一个命令工具，是一个解释Makefile文件中指令的命令工具，一般来说，大多数的IDE都有这个命令，比如Delphi的make,Visual C++的nmake,Linux下GNU的make。</li></ol><p>对于压缩文件可通过<code>tar -zxvf gdb-8.0.1.tar.gz/</code>进行解压,</p><ol><li><code>-z</code>: 表示要使用 gzip 压缩进行解压缩。因为文件名以 “.tar.gz” 结尾，这是一个 gzip 压缩的 tar 归档文件</li><li><code>-x</code>: 指示 <code>tar</code> 提取文件的操作。</li><li><code>-v</code>: 启用详细模式，会显示解压缩的进度和提取的文件列表</li><li><code>-f</code>: 后面跟着要处理的文件名，这里是 “gdb-8.0.1.tar.gz”。</li></ol><h2 id="MakeFile文件命名和规则"><a href="#MakeFile文件命名和规则" class="headerlink" title="MakeFile文件命名和规则"></a>MakeFile文件命名和规则</h2><h3 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h3><p>makefile或者MakeFile</p><h3 id="MakeFile-规则"><a href="#MakeFile-规则" class="headerlink" title="MakeFile 规则"></a>MakeFile 规则</h3><ol><li><p>一个Makefi1e文件中可以有一个或者多个规则</p><blockquote><p>目标…：依赖 …</p><p>​命令(she11命令)</p><p>​…</p></blockquote><ul><li>目标：最终要生成的文件（伪目标除外)</li><li>依赖：生成目标所需要的文件或是目标</li><li>命令：通过执行命令对依赖操作生成目标（命令前必须Tab缩进）</li></ul></li><li><p>Makefile中的其它规则一般都是为第一条规则服务的。</p></li></ol><h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><ol><li>命令在执行之前，需要先检查规则中的依赖是否存在<ul><li>如果存在，执行命令</li><li>口如果不存在，向下检查其它的规则，检查有没有一个规则是用来生成这个依赖的，如果找到了，则执行该规则中的命令</li></ul></li><li>检测更新，在执行规则中的命令时，会比较目标和依赖文件的时间<ul><li>口如果依赖的时间比目标的时间晚，需要重新生成目标</li><li>口如果依赖的时间比目标的时间早，目标不需要更新，对应规则中的命令不需要被执行</li></ul></li></ol><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ol><li>自定义变量<ul><li>变量名&#x3D;变量值 var&#x3D;hello  (var)</li></ul></li><li>预定义变量<ul><li>AR:归档维护程序的名称，默认值为ar  </li><li>Cc:C编译器的名称，默认值为cc            </li><li>CXX:C++编译器的名称，默认值为g++</li><li>$©：目标的完整名称   #自动变量只能在规则的命令中使用</li><li>$&lt;:第一个依赖文件的名  </li><li>$:所有的依赖文件</li></ul></li><li>获取变量的值<ul><li>$(变量名)</li></ul></li></ol><h2 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h2><p><img src="/2023/090650137/image-20230906131445463.png" alt="image-20230906131445463"></p><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p><img src="/2023/090650137/image-20230906132134783.png" alt="image-20230906132134783"></p><p><img src="/2023/090650137/image-20230906132147856.png" alt="image-20230906132147856"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MakeFile </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>静态库使用</title>
       <link href="/2023/090526179.html"/>
       <url>/2023/090526179.html</url>

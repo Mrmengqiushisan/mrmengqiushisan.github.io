@@ -6,7 +6,7 @@
   <link href="https://mrmengqiushisan.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrmengqiushisan.github.io/"/>
-  <updated>2023-09-06T02:45:06.167Z</updated>
+  <updated>2023-11-12T14:50:02.010Z</updated>
   <id>https://mrmengqiushisan.github.io/</id>
   
   <author>
@@ -15,6 +15,106 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线段树的原理与应用</title>
+    <link href="https://mrmengqiushisan.github.io/2023/11123502.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/11123502.html</id>
+    <published>2023-11-12T06:39:46.000Z</published>
+    <updated>2023-11-12T14:50:02.010Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;线段树的原理及实现&quot;&gt;&lt;a href=&quot;#线段树的原理及实现&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="https://mrmengqiushisan.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="线段树" scheme="https://mrmengqiushisan.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+    <category term="树结构" scheme="https://mrmengqiushisan.github.io/tags/%E6%A0%91%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FFmpeg结构体</title>
+    <link href="https://mrmengqiushisan.github.io/2023/102538383.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/102538383.html</id>
+    <published>2023-10-25T14:39:00.000Z</published>
+    <updated>2023-10-27T15:47:10.317Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;整体关系介绍&quot;&gt;&lt;a href=&quot;#整体关系介绍&quot; class=&quot;headerlink&quot; title=&quot;整体关系介绍&quot;&gt;&lt;/a&gt;整体关系介绍&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="FFmpeg" scheme="https://mrmengqiushisan.github.io/categories/FFmpeg/"/>
+    
+    
+    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
+    
+    <category term="音视频" scheme="https://mrmengqiushisan.github.io/tags/%E9%9F%B3%E8%A7%86%E9%A2%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QOpenGLWidget学习</title>
+    <link href="https://mrmengqiushisan.github.io/2023/102337171.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/102337171.html</id>
+    <published>2023-10-23T11:54:18.000Z</published>
+    <updated>2023-10-24T01:31:26.220Z</updated>
+    
+    
+    
+    
+    <category term="Qt" scheme="https://mrmengqiushisan.github.io/categories/Qt/"/>
+    
+    
+    <category term="QOpenGLWidget" scheme="https://mrmengqiushisan.github.io/tags/QOpenGLWidget/"/>
+    
+    <category term="三维渲染" scheme="https://mrmengqiushisan.github.io/tags/%E4%B8%89%E7%BB%B4%E6%B8%B2%E6%9F%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MakeFile</title>
+    <link href="https://mrmengqiushisan.github.io/2023/090650137.html"/>
+    <id>https://mrmengqiushisan.github.io/2023/090650137.html</id>
+    <published>2023-09-06T02:47:25.000Z</published>
+    <updated>2023-10-24T01:26:37.549Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什么是MakeFile&quot;&gt;&lt;a href=&quot;#什么是MakeFile&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MakeFile" scheme="https://mrmengqiushisan.github.io/categories/MakeFile/"/>
+    
+    
+    <category term="C++" scheme="https://mrmengqiushisan.github.io/tags/C/"/>
+    
+    <category term="Linux" scheme="https://mrmengqiushisan.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>静态库使用</title>
@@ -438,116 +538,6 @@
     <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
     
     <category term="数据库" scheme="https://mrmengqiushisan.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>内存与存储系统</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080926390.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080926390.html</id>
-    <published>2023-08-09T11:50:44.000Z</published>
-    <updated>2023-08-09T14:29:21.516Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;什么是存储系统&quot;&gt;&lt;a href=&quot;#什么是存储系统&quot; class=&quot;headerlink&quot; title=&quot;什么是存储系统&quot;&gt;&lt;/a&gt;什么是存储系统&lt;/h2&gt;&lt;p&gt;一个提供了读写、控制类接口、能够安全有效地把数据持久化的软件，就可以称为存储系统&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://mrmengqiushisan.github.io/categories/MySQL/"/>
-    
-    
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
-    
-    <category term="存储系统" scheme="https://mrmengqiushisan.github.io/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GORM框架</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080927216.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080927216.html</id>
-    <published>2023-08-09T08:43:24.000Z</published>
-    <updated>2023-08-11T04:45:21.687Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;GORM概述&quot;&gt;&lt;a href=&quot;#GORM概述&quot; class=&quot;headerlink&quot; title=&quot;GORM概述&quot;&gt;&lt;/a&gt;GORM概述&lt;/h2&gt;&lt;p&gt;GORM 是基于 Go 语言的一个自动化的 ORM（Object Relational Mapping）</summary>
-        
-      
-    
-    
-    
-    <category term="GORM" scheme="https://mrmengqiushisan.github.io/categories/GORM/"/>
-    
-    
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
-    
-    <category term="MySQL" scheme="https://mrmengqiushisan.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Go语言操作MySQL</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080928006.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080928006.html</id>
-    <published>2023-08-09T03:03:12.000Z</published>
-    <updated>2023-08-09T08:52:15.063Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Go语言操作MySQL&lt;/p&gt;
-&lt;p&gt;Go语言中的&lt;code&gt;database/sql&lt;/code&gt;不包含数据库驱动，&lt;code&gt;database/sql&lt;/code&gt;提供了保证SQL或类SQL数据库的泛用接口。使用sql包时必须注入（至少）一个数据库驱动。 参见&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://mrmengqiushisan.github.io/categories/MySQL/"/>
-    
-    
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
-    
-    <category term="MySQL" scheme="https://mrmengqiushisan.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RPC框架分层设计</title>
-    <link href="https://mrmengqiushisan.github.io/2023/080864291.html"/>
-    <id>https://mrmengqiushisan.github.io/2023/080864291.html</id>
-    <published>2023-08-08T08:30:46.000Z</published>
-    <updated>2023-08-09T08:37:25.528Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;远程函数调用-RPC-remote-procedure-calls&quot;&gt;&lt;a href=&quot;#远程函数调用-RPC-remote-procedure-calls&quot; class=&quot;headerlink&quot; title=&quot;远程函数调用(RPC - remote</summary>
-        
-      
-    
-    
-    
-    <category term="RPC" scheme="https://mrmengqiushisan.github.io/categories/RPC/"/>
-    
-    
-    <category term="Go" scheme="https://mrmengqiushisan.github.io/tags/Go/"/>
-    
-    <category term="框架设计" scheme="https://mrmengqiushisan.github.io/tags/%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
